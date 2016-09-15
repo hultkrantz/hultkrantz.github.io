@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>media-query</title>
+    <style>
+        
+        #hidden1 {
+            display: none;
+        }
+        
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        
+        .monster {
+            border: 3px solid #CC0000;
+            height: 200px;
+            }
+        
+        @media (min-width:600px)and (max-width:749px) {
+            .monster {
+                background-color: red;}
+            #hidden1 {display: inherit}
+            }
+        @media (min-width:750px) and max-width:899px {
+            .monster{ background-color: greenyellow;}
+            #hidden2 {display: inherit}
+            }
+        @media (min-width:900px) {
+            .monster {background-color: blue;}
+            }
+        @media (min-width:1500px) {
+            .monster {background-color: #CD7762;}
+            }
+        div > div {
+            border: 2px solid black;
+            margin: 4px;
+            padding: 40px;
+            }
+            
+        @media (min-width:600px) and (max-width:1050px) {
+            .container {flex-direction: column; background-color: aqua;}  
+            }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>  
+    </div>
+    
+    <div class="monster">
+       <div>4</div>
+    </div>
+    
+    <!--inherit-->
+    <div class="name">
+        <div id="hidden1">white</div>
+        <div id="hidden2">Red</div>
+        <div id="hidden3">Greenyellow</div>
+    </div>
+    
+</body>
+</html>
