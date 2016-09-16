@@ -30,6 +30,7 @@
         }
         
         
+        
     </style>
 </head>
 <body>
@@ -43,23 +44,37 @@
         </ul>
    </nav>
    
+   <h3>Lite skum webbsida för betalning.</h3>
+   <p>Använd på egen risk*</p>
    
+   <textarea row="8" cols="40" placeholder="Skriv din beställning"></textarea>
+   <br>
    
-    <label for="username">Skriv in ditt namn:</label>
+    <label for="username"><strong>Skriv in ditt namn:</strong></label>
     <input type="text" name="name" id="username" value="" placeholder="Ditt namn"/>
     
     <br>
+    <br>
     
     <datalist id="minlista">
-        <option>Ingen</option>
-        <option>1 till 2</option>
-        <option>3 eller fler</option>
+        <option>Handelsbanken</option>
+        <option>Swedbank</option>
+        <option>Nordea</option>
+        <option>Annan lokal bank</option>
         
     </datalist>
-    <label for="minlista">Hur många bilar äger du?</label>
+    <label for="minlista"><strong>Vilken bank använder du?</strong></label>
     <input type="text" list="minlista"/>
     
+    <br>
+    <br>
     
+    <label for="bankkod"><strong>Pinkod till bankkort:</strong></label>
+    <input type="text" name="kod" id="bankkod" value="" placeholder="Din pinkod"/>
+    
+    <br>
+    <br>
+    <button type="button">Genom för skum betalning</button>
     
    
    
