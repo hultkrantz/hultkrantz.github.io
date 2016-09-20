@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ny övning 6</title>
+    <style>
+        
+    .container {
+        display: flex;
+        flex-flow: row;
+        height: 600px;
+        border-radius: 5px;
+        border: 5px solid #bfbfbf;
+        font-size: 2em;
+    }
+        .container > .nav {
+            flex-grow:2;
+            order 1;
+            background-color: #ccccff;
+    }
+        .container > .content {
+            flex-grow: 8;
+            order:2;
+            background-color: #ccff66;
+     }
+        .container > .aside {
+            flex-grow: 2;
+            order:3;
+            background-color: #ccccff;
+    }
+        
+        .header, .footer {
+            background-color: #ffffcc;
+            height: 80px;
+            display:block;
+            border-radius: 5px;
+            border: 5px solid #bfbfbf;
+            font-size: 2em;
+        }
+    
+    </style>
+</head>
+<body>
+  
+  
+   <div class="header">Översidan</div>
+    
+    <div class="container">
+        <div class="nav">Navigation</div>
+        <div class="content">Innehåll</div>
+        <div class="aside">Aside</div>
+    </div>
+    
+    <div class="footer">Footer</div>
+</body>
+</html>
