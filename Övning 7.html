@@ -2,70 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>media-query</title>
+    <title>Övning7 v2</title>
     <style>
         
-        #hidden1 {
-            display: none;
-        }
-        
-        
-        .container {
+            .container {
             display: flex;
-            flex-direction: row;
+            flex-flow: row;
+            margin:10px;
+            
         }
         
+        .container > .nav {
+            flex-grow: 3;
+            order:1;
+            background-color: orange;
+            height: 75px;
+        }
+        .container > .content {
+            flex-grow: 6;
+            order:2;
+            background-color: hotpink;
+             height: 75px;
+        }
+        .container > .aside {
+            flex-grow: 3;
+            order:3;
+            background-color: chartreuse;
+            height: 75px;
+        }
+            @media (min-width:600px) and (max-width:1050px) {
+            .container {
+                flex-flow: column; 
+                background-color: aqua;
+                
+                }
+        }  
+    
         
-        .monster {
-            border: 3px solid #CC0000;
-            height: 200px;
-            }
         
-        @media (min-width:600px)and (max-width:749px) {
-            .monster {
-                background-color: red;}
-            #hidden1 {display: inherit}
-            }
-        @media (min-width:750px) and max-width:899px {
-            .monster{ background-color: greenyellow;}
-            #hidden2 {display: inherit}
-            }
-        @media (min-width:900px) {
-            .monster {background-color: blue;}
-            }
-        @media (min-width:1500px) {
-            .monster {background-color: #CD7762;}
-            }
-        div > div {
-            border: 2px solid black;
-            margin: 4px;
-            padding: 40px;
+        .red, .green, .blue, .pink, .yellow {
+            display: none;
+            height: 100px;
+            font-size: 3em;
+            font-family: cursive;
+            text-align: center;
+        }
+        
+        @media (max-width: 600px) {
+            .red {
+                background-color: red;
+                display: block;
             }
             
-        @media (min-width:600px) and (max-width:1050px) {
-            .container {flex-direction: column; background-color: aqua;}  
+        }
+        @media (min-width: 601px) and (max-width: 750px) {
+            .green {
+                background-color: lawngreen;
+                display: block;
             }
+            
+        }
+        @media (min-width: 751px) and (max-width:900px) {
+            .blue {
+                background-color: lightskyblue;
+                display: block;
+            }
+            
+        }
+        @media (min-width:901px) and (max-width: 1050px) {
+            .pink {
+                background-color: hotpink;
+                display: block;
+            }
+            
+        }
+        @media (min-width: 1051px) {
+            .yellow {
+                background-color: yellow;
+                display: block;
+            }
+            
+        }
+        
+        
         
     </style>
+    
 </head>
 <body>
+   
     
     <div class="container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>  
+        <div class="nav">1</div>
+        <div class="content">2</div>
+        <div class="aside">3</div>  
     </div>
     
-    <div class="monster">
-       <div>4</div>
+    <div class="colors">
+        <div class="red"> Röd </div>
+        <div class="green">Grön</div>
+        <div class="blue">Blå</div>
+        <div class="pink">Rosa</div>
+        <div class="yellow">Gul</div>
+        
     </div>
     
-    <!--inherit-->
-    <div class="name">
-        <div id="hidden1">white</div>
-        <div id="hidden2">Red</div>
-        <div id="hidden3">Greenyellow</div>
-    </div>
+   
     
 </body>
 </html>
