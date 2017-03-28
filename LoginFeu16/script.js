@@ -1,3 +1,8 @@
+////////Declaration////////
+let imageHolder = document.getElementById("imageHolder")
+	, nameHolder = document.getElementById("nameHolder")
+	, loginButton = document.getElementById("loginButton");
+
 //////Login
 let loginFunction = function () {
 	let provider = new firebase.auth.GithubAuthProvider();
@@ -13,22 +18,20 @@ let logoutFuntion = function () {
 			console.log("Du är nu utloggad");
 		}).catch(function (error) {
 			// Utloggning misslyckades
-			console.log("Det gick inte som vi ville"+error)
+			console.log("Det gick inte som vi ville" + error)
 		});
 	}
-	////////Declaration////////
-let imageHolder = document.getElementById("imageHolder")
-	, nameHolder = document.getElementById("nameHolder")
-	, loginButton = document.getElementById("loginButton");
+	
 ///////Functions//////
-loginButton.addEventListener("click", function () {
+
+if (loginButton.innerHTML == "Sign out") {
+	loginButton.addEventListener("click", function () {
+		logoutFuntion();
+		loginButton.innerHTML = "Sign in";
+	})
+}else{
+	loginButton.addEventListener("click", function () {
 	loginFunction();
 	loginButton.innerHTML = "Sign out";
 });
-if (loginButton.innerHTML == "Sign out"){
-	loginButton.addEventListener("click", function(){
-	logoutFuntion();
-	loginButton.innerHTML = "Sign in"	
-	})
-
-};
+}
