@@ -1,4 +1,19 @@
 body{
+	margin: 0;
+	padding: 0;
 	background: #123345;
 	color: white;
+}
+#divContaienr{
+	width: 100vw;
+	margin: 0 auto;
+	
+}
+#logginButton{
+	margin-left: 15vw;
+	margin-top: 10vh;
+	background-color: white;
+	height: 40px;
+	font-family: monospace;
+	font-size: 2em;
 }
