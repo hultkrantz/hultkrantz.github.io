@@ -9,15 +9,26 @@ let loginFunction = function () {
 };
 /////////Logout
 let logoutFuntion = function () {
-		firebase.auth().signOut().then(function (result) {}).catch(function (error) {
+		firebase.auth().signOut().then(function (result) {
+			console.log("Du är nu utloggad");
+		}).catch(function (error) {
 			// Utloggning misslyckades
+			console.log("Det gick inte som vi ville"+error)
 		});
 	}
 	////////Declaration////////
 let imageHolder = document.getElementById("imageHolder")
 	, nameHolder = document.getElementById("nameHolder")
-	, logginButton = document.getElementById("logginButton");
+	, loginButton = document.getElementById("loginButton");
 ///////Functions//////
-logginButton.addEventListener("click", function () {
+loginButton.addEventListener("click", function () {
 	loginFunction();
+	loginButton.innerHTML = "Sign out";
 });
+if (loginButton.innerHTML == "Sign out"){
+	loginButton.addEventListener("click", function(){
+	logoutFuntion();
+	loginButton.innerHTML = "Sign in"	
+	})
+
+};
