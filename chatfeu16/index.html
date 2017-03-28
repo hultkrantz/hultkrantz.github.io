@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Chat</title>
+	<link rel="stylesheet" href="style.css"> </head>
+
+<body>
+	<container>
+		<h1>ChatFeu16</h1>
+		<div>
+			<input type="text" placeholder="Your name" id="userName">
+			<button id="loginButton">Login</button> <span id="messageToUser"></span> </div>
+		<div>
+			<ul id="chatWindow"> </ul>
+			<input id="chatInput" type="text" placeholder="Input text">
+			<button id="sendChatInput">Send</button>
+		</div>
+	</container>
+	<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyAO6-xKx3Qk18DZIv4bzrGEH2_3VizaRv0"
+			, authDomain: "chatfeu16.firebaseapp.com"
+			, databaseURL: "https://chatfeu16.firebaseio.com"
+			, storageBucket: "chatfeu16.appspot.com"
+			, messagingSenderId: "456632987526"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
