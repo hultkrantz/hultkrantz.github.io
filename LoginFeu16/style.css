@@ -9,11 +9,14 @@ body{
 	margin: 0 auto;
 	
 }
-#loginButton{
+button{
 	margin-left: 15vw;
 	margin-top: 10vh;
 	background-color: white;
 	height: 40px;
 	font-family: monospace;
 	font-size: 2em;
+}
+#logoutButton{
+    display: none;
 }

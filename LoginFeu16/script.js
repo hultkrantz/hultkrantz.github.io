@@ -25,8 +25,12 @@ let logoutFuntion = function () {
 loginButton.addEventListener("click", function () {
     loginFunction();
     nameHolder.innerHTML = "Utloggad";
+    loginButton.style.display = "none";
+    logoutButton.style.display = "inline";
 });
 logoutButton.addEventListener("click", function () {
             logoutFuntion();
             nameHolder.innerHTML = "Inloggad";
+            loginButton.style.display = "inline";
+            logoutButton.style.display = "none";
         });
