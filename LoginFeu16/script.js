@@ -37,6 +37,8 @@ let displayProfileImage = function () {
     imageHolder.innerHTML = "";
     let profileImage = document.createElement("img");
     profileImage.src = userProfileUrl;
+    profileImage.style.maxHeight ="100%";
+    profileImage.style.maxWidth ="100%";
     imageHolder.appendChild(profileImage);
     console.log("Profile image: " + profileImage);
 };
