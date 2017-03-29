@@ -10,9 +10,8 @@ let loginFunction = function () {
     firebase.auth().signInWithPopup(provider).then(function (result) {
         alert("ab");
         user = result.user;
-        console.log("user.photUrL"+user.photoURL);
         console.log(result.user);
-
+        console.log("user.photUrL"+user.photoURL);
     });
 };
 /////////Logout
