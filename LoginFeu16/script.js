@@ -24,7 +24,7 @@ let logoutFuntion = function () {
 ///////Functions//////
 let displayProfileImage = function () {
     let profileImage = document.createElement("img");
-    profileImage.src = localStorage.getItem(uid.photoURL);
+    profileImage.src = localStorage.getItem(firebase.photoURL);
     imageHolder.appendChild(profileImage);
     console.log(profileImage);
 };
