@@ -36,7 +36,7 @@ loginButton.addEventListener("click", function () {
     nameHolder.innerHTML = "Utloggad";
     loginButton.style.display = "none";
     logoutButton.style.display = "inline";
-    console.log("localStorage: "+ localStorage);
+    console.log("localStorage: " + localStorage);
     displayProfileImage();
 });
 logoutButton.addEventListener("click", function () {
