@@ -34,7 +34,7 @@ let logoutFuntion = function () {
 };
 ///////Functions//////
 let displayProfileImage = function () {
-    imageMessage.innerHTML = "";
+    imageHolder.innerHTML = "";
     profileImage = document.createElement("img");
     profileImage.src = userProfileUrl;
     profileImage.style.maxHeight ="100%";
@@ -56,5 +56,4 @@ logoutButton.addEventListener("click", function () {
     logoutButton.style.display = "none";
     console.log("Local storage: " + localStorage);
     profileImage.src ="";
-    imageHolder.innerHTML ="Login for more fun!"
 });
