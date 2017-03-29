@@ -29,6 +29,7 @@ loginButton.addEventListener("click", function () {
     loginButton.style.display = "none";
     logoutButton.style.display = "inline";
     console.log(localStorage);
+    displayProfileImage();
 });
 logoutButton.addEventListener("click", function () {
             logoutFuntion();
@@ -39,3 +40,8 @@ logoutButton.addEventListener("click", function () {
     console.log(localStorage);
         });
 
+let displayProfileImage = function(){
+    let profileImage  = document.createElement("img");
+    profileImage.src = localStorage.getItem(W.photoURL);
+    imageHolder.appendChild(profileImage);
+}
