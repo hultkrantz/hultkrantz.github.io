@@ -11,8 +11,6 @@ let loginFunction = function () {
     let provider = new firebase.auth.GithubAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
         user = result.user;
-        console.log(result.user);
-        console.log("user.photUrL :" + user.photoURL);
         userProfileUrl = user.photoURL;
         displayProfileImage();
         if (user.displayName === null) {
@@ -26,10 +24,12 @@ let loginFunction = function () {
 /////////Logout
 let logoutFuntion = function () {
     firebase.auth().signOut().then(function (result) {
-        console.log("Du är nu utloggad");
+        console.log("You are no more my friend");
     }).catch(function (error) {
         // Utloggning misslyckades
         console.log("Det gick inte som vi ville" + error);
+        nameHolder.innerHTML = "Somting went wrong";
+        
     });
 };
 ///////Functions//////
@@ -46,7 +46,7 @@ loginButton.addEventListener("click", function () {
     console.log("loginButton pressed");
     loginButton.style.display = "none";
     logoutButton.style.display = "inline";
-    console.log("localStorage: " + localStorage);
+
 });
 logoutButton.addEventListener("click", function () {
     logoutFuntion();
@@ -54,6 +54,5 @@ logoutButton.addEventListener("click", function () {
     nameHolder.innerHTML = "Another time then";
     loginButton.style.display = "inline";
     logoutButton.style.display = "none";
-    console.log("Local storage: " + localStorage);
     profileImage.src ="";
 });
