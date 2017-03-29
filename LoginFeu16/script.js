@@ -4,7 +4,7 @@ let imageHolder = document.getElementById("imageHolder")
     , loginButton = document.getElementById("loginButton")
     , logoutButton = document.getElementById("logoutButton")
     , pictureButton = document.getElementById("pictureButton")
-    , user, userProfileUrl;
+    , user, userProfileUrl, profileImage;
 //////Login
 let loginFunction = function () {
     let provider = new firebase.auth.GithubAuthProvider();
@@ -34,7 +34,7 @@ let logoutFuntion = function () {
 ///////Functions//////
 let displayProfileImage = function () {
     imageHolder.innerHTML = "";
-    let profileImage = document.createElement("img");
+    profileImage = document.createElement("img");
     profileImage.src = userProfileUrl;
     profileImage.style.maxHeight ="100%";
     profileImage.style.maxWidth ="100%";
