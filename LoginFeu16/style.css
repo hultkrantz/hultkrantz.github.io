@@ -1,22 +1,43 @@
-body{
-	margin: 0;
-	padding: 0;
-	background: #123345;
-	color: white;
+body {
+    margin: 0;
+    padding: 0;
+    background: #123345;
+    color: white;
 }
-#divContaienr{
-	width: 100vw;
-	margin: 0 auto;
-	
+
+#divContaienr {
+    width: 100vw;
+    margin: 0 auto;
 }
-button{
-	margin-left: 15vw;
-	margin-top: 10vh;
-	background-color: white;
-	height: 40px;
-	font-family: monospace;
-	font-size: 2em;
+
+button {
+    margin-left: 15vw;
+    margin-top: 10vh;
+    color: white;
+    background-image: url(aaa.jpg);
+    height: 40px;
+    font-family: monospace;
+    font-size: 2em;
 }
-#logoutButton{
+
+#logoutButton {
     display: none;
+}
+
+#imageHolder {
+    background-image: url(aaa.jpg);
+    margin: 10vh;
+    height: 400px;
+    width: 400px;
+    border: 3px solid lightgrey;
+    font-size: 30px;
+}
+
+#imageHolder p {
+    margin: 20%;
+}
+#nameHolder{
+    margin-top: -80px;
+    margin-left: 20px;
+    font-size: 3em;
 }
