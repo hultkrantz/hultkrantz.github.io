@@ -26,7 +26,7 @@ let displayProfileImage = function () {
     let profileImage = document.createElement("img");
     profileImage.src = localStorage.getItem(firebase.photoURL);
     imageHolder.appendChild(profileImage);
-    console.log(profileImage);
+    console.log("Profile image: "+profileImage);
 };
 loginButton.addEventListener("click", function () {
     loginFunction();
@@ -34,7 +34,7 @@ loginButton.addEventListener("click", function () {
     nameHolder.innerHTML = "Utloggad";
     loginButton.style.display = "none";
     logoutButton.style.display = "inline";
-    console.log(localStorage);
+    console.log("localStorage: "localStorage);
     displayProfileImage();
 });
 logoutButton.addEventListener("click", function () {
