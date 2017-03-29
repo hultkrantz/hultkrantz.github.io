@@ -15,11 +15,12 @@ let loginFunction = function () {
         console.log("user.photUrL :" + user.photoURL);
         userProfileUrl = user.photoURL;
         displayProfileImage();
-        if(user.displayName === null){
-            nameHolder.innerHTML ="Welcome to LoginFeu16";
-        } else{
-        nameHolder.innerHTML ="Welcome: "+user.displayName;
-            }
+        if (user.displayName === null) {
+            nameHolder.innerHTML = "Welcome to LoginFeu16";
+        }
+        else {
+            nameHolder.innerHTML = "Welcome: " + user.displayName;
+        }
     });
 };
 /////////Logout
@@ -33,6 +34,7 @@ let logoutFuntion = function () {
 };
 ///////Functions//////
 let displayProfileImage = function () {
+    imageHolder.innerHTML = "";
     let profileImage = document.createElement("img");
     profileImage.src = userProfileUrl;
     imageHolder.appendChild(profileImage);
@@ -48,7 +50,7 @@ loginButton.addEventListener("click", function () {
 logoutButton.addEventListener("click", function () {
     logoutFuntion();
     console.log("logoutButton pressed");
-    nameHolder.innerHTML = "Du är nu utloggad";
+    nameHolder.innerHTML = "Another time then";
     loginButton.style.display = "inline";
     logoutButton.style.display = "none";
     console.log("Local storage: " + localStorage);
