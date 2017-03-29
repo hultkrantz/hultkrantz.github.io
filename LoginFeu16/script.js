@@ -7,7 +7,7 @@ let imageHolder = document.getElementById("imageHolder")
 let loginFunction = function () {
 	let provider = new firebase.auth.GithubAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
-		alert("a")
+		alert("ab")
 		let user = result.user;
 		console.log(result.user)
 	});
@@ -24,7 +24,7 @@ let logoutFuntion = function () {
 	
 ///////Functions//////
 
-if (loginButton.innerHTML = "Sign out") {
+/*if (loginButton.innerHTML = "Sign out") {
 	loginButton.addEventListener("click", function () {
 		logoutFuntion();
 		loginButton.innerHTML = "Sign in";
@@ -34,4 +34,4 @@ if (loginButton.innerHTML = "Sign out") {
 	loginFunction();
 	loginButton.innerHTML = "Sign out";
 });
-}
+}*/
