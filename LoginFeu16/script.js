@@ -24,13 +24,16 @@ let logoutFuntion = function () {
 ///////Functions//////
 loginButton.addEventListener("click", function () {
     loginFunction();
+    console.log("loginButton pressed");
     nameHolder.innerHTML = "Utloggad";
     loginButton.style.display = "none";
     logoutButton.style.display = "inline";
 });
 logoutButton.addEventListener("click", function () {
             logoutFuntion();
+            console.log("logoutButton pressed");
             nameHolder.innerHTML = "Inloggad";
             loginButton.style.display = "inline";
             logoutButton.style.display = "none";
         });
+
