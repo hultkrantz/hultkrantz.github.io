@@ -27,7 +27,7 @@ let logoutFuntion = function () {
 ///////Functions//////
 let displayProfileImage = function () {
     let profileImage = document.createElement("img");
-    console.log("Profile image: "+profileImage);
+    //console.log("Profile image: "+profileImage);
     profileImage.src = localStorage.getItem(user.photoURL);
     imageHolder.appendChild(profileImage);
     console.log("Profile image: "+profileImage);
