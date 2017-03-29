@@ -56,5 +56,5 @@ logoutButton.addEventListener("click", function () {
     logoutButton.style.display = "none";
     console.log("Local storage: " + localStorage);
     profileImage.src ="";
-    imageMessage.innerHTML ="Login for more fun!"
+    imageHolder.innerHTML ="Login for more fun!"
 });
