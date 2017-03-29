@@ -2,13 +2,14 @@
 let imageHolder = document.getElementById("imageHolder")
     , nameHolder = document.getElementById("nameHolder")
     , loginButton = document.getElementById("loginButton")
-    , logoutButton = document.getElementById("logoutButton");
+    , logoutButton = document.getElementById("logoutButton")
+    , user;
 //////Login
 let loginFunction = function () {
     let provider = new firebase.auth.GithubAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
         alert("ab");
-        let user = result.user;
+        user = result.user;
         console.log(result.user);
     });
 };
