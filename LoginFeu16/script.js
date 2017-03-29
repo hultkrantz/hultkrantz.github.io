@@ -4,6 +4,7 @@ let imageHolder = document.getElementById("imageHolder")
     , loginButton = document.getElementById("loginButton")
     , logoutButton = document.getElementById("logoutButton")
     , pictureButton = document.getElementById("pictureButton")
+    , imageMessage = document.getElementById("imageMessage")
     , user, userProfileUrl, profileImage;
 //////Login
 let loginFunction = function () {
@@ -33,7 +34,7 @@ let logoutFuntion = function () {
 };
 ///////Functions//////
 let displayProfileImage = function () {
-    imageHolder.innerHTML = "";
+    imageMessage.innerHTML = "";
     profileImage = document.createElement("img");
     profileImage.src = userProfileUrl;
     profileImage.style.maxHeight ="100%";
@@ -55,5 +56,5 @@ logoutButton.addEventListener("click", function () {
     logoutButton.style.display = "none";
     console.log("Local storage: " + localStorage);
     profileImage.src ="";
-    imageHolder.innerHTML ="Login for more fun!"
+    imageMessage.innerHTML ="Login for more fun!"
 });
