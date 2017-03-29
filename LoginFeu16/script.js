@@ -41,7 +41,6 @@ let displayProfileImage = function () {
 loginButton.addEventListener("click", function () {
     loginFunction();
     console.log("loginButton pressed");
-    nameHolder.innerHTML = "Utloggad";
     loginButton.style.display = "none";
     logoutButton.style.display = "inline";
     console.log("localStorage: " + localStorage);
@@ -49,7 +48,7 @@ loginButton.addEventListener("click", function () {
 logoutButton.addEventListener("click", function () {
     logoutFuntion();
     console.log("logoutButton pressed");
-    nameHolder.innerHTML = "Inloggad";
+    nameHolder.innerHTML = "Du är nu utloggad";
     loginButton.style.display = "inline";
     logoutButton.style.display = "none";
     console.log("Local storage: " + localStorage);
