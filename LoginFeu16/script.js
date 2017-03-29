@@ -15,6 +15,7 @@ let loginFunction = function () {
         console.log(result.user);
         console.log("user.photUrL :"+user.photoURL);
         userProfileUrl = user.photoURL;
+        displayProfileImage();
     });
 };
 /////////Logout
