@@ -4,7 +4,8 @@ let imageHolder = document.getElementById("imageHolder")
     , loginButton = document.getElementById("loginButton")
     , logoutButton = document.getElementById("logoutButton")
     ,pictureButton = document.getElementById("pictureButton")
-    , user;
+    , user
+    ,userProfileUrl;
 //////Login
 let loginFunction = function () {
     let provider = new firebase.auth.GithubAuthProvider();
@@ -12,7 +13,8 @@ let loginFunction = function () {
         alert("ab");
         user = result.user;
         console.log(result.user);
-        console.log("user.photUrL"+user.photoURL);
+        console.log("user.photUrL :"+user.photoURL);
+        userProfileUrl = user.photoURL;
     });
 };
 /////////Logout
@@ -27,8 +29,7 @@ let logoutFuntion = function () {
 ///////Functions//////
 let displayProfileImage = function () {
     let profileImage = document.createElement("img");
-    //console.log("Profile image: "+profileImage);
-    profileImage.src = localStorage.getItem(user.photoURL);
+    profileImage.src = userProfileUrl;
     imageHolder.appendChild(profileImage);
     console.log("Profile image: "+profileImage);
 };
