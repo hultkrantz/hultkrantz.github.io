@@ -22,6 +22,12 @@ let logoutFuntion = function () {
     });
 };
 ///////Functions//////
+let displayProfileImage = function () {
+    let profileImage = document.createElement("img");
+    profileImage.src = localStorage.getItem(W.photoURL);
+    imageHolder.appendChild(profileImage);
+    console.log(profileImage);
+};
 loginButton.addEventListener("click", function () {
     loginFunction();
     console.log("loginButton pressed");
@@ -32,17 +38,10 @@ loginButton.addEventListener("click", function () {
     displayProfileImage();
 });
 logoutButton.addEventListener("click", function () {
-            logoutFuntion();
-            console.log("logoutButton pressed");
-            nameHolder.innerHTML = "Inloggad";
-            loginButton.style.display = "inline";
-            logoutButton.style.display = "none";
+    logoutFuntion();
+    console.log("logoutButton pressed");
+    nameHolder.innerHTML = "Inloggad";
+    loginButton.style.display = "inline";
+    logoutButton.style.display = "none";
     console.log(localStorage);
-        });
-
-let displayProfileImage = function(){
-    let profileImage  = document.createElement("img");
-    profileImage.src = localStorage.getItem(W.photoURL);
-    imageHolder.appendChild(profileImage);
-    console.log(profileImage);
-};
+});
