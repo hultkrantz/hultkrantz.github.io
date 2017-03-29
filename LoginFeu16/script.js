@@ -15,10 +15,10 @@ let loginFunction = function () {
         userProfileUrl = user.photoURL;
         displayProfileImage();
         if (user.displayName === null) {
-            nameHolder.innerHTML = "Welcome to LoginFeu16";
+            nameHolder.innerHTML = "Welcome " + user.email+"!";
         }
         else {
-            nameHolder.innerHTML = "Welcome: " + user.displayName+"!";
+            nameHolder.innerHTML = "Welcome " + user.displayName+"!";
         }
     });
 };
@@ -39,7 +39,6 @@ let displayProfileImage = function () {
     profileImage.style.maxHeight ="100%";
     profileImage.style.maxWidth ="100%";
     imageHolder.appendChild(profileImage);
-    console.log("Profile image: " + profileImage);
 };
 loginButton.addEventListener("click", function () {
     loginFunction();
