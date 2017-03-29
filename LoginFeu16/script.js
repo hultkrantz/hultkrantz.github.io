@@ -11,6 +11,7 @@ let loginFunction = function () {
         alert("ab");
         user = result.user;
         console.log(result.user);
+        console.log("user.photUrL"+user.photoURL);
     });
 };
 /////////Logout
