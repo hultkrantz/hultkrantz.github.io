@@ -18,7 +18,7 @@ let loginFunction = function () {
             nameHolder.innerHTML = "Welcome to LoginFeu16";
         }
         else {
-            nameHolder.innerHTML = "Welcome: " + user.displayName;
+            nameHolder.innerHTML = "Welcome: " + user.displayName+"!";
         }
     });
 };
