@@ -3,6 +3,7 @@ let imageHolder = document.getElementById("imageHolder")
     , nameHolder = document.getElementById("nameHolder")
     , loginButton = document.getElementById("loginButton")
     , logoutButton = document.getElementById("logoutButton")
+    ,pictureButton = document.getElementById("pictureButton")
     , user;
 //////Login
 let loginFunction = function () {
@@ -27,7 +28,7 @@ let logoutFuntion = function () {
 let displayProfileImage = function () {
     let profileImage = document.createElement("img");
     console.log("Profile image: "+profileImage);
-    profileImage.src = localStorage.getItem(user.photoURL.value);
+    profileImage.src = localStorage.getItem(user.photoURL);
     imageHolder.appendChild(profileImage);
     console.log("Profile image: "+profileImage);
 };
@@ -38,7 +39,6 @@ loginButton.addEventListener("click", function () {
     loginButton.style.display = "none";
     logoutButton.style.display = "inline";
     console.log("localStorage: " + localStorage);
-    displayProfileImage();
 });
 logoutButton.addEventListener("click", function () {
     logoutFuntion();
@@ -48,3 +48,8 @@ logoutButton.addEventListener("click", function () {
     logoutButton.style.display = "none";
     console.log("Local storage: "+localStorage);
 });
+
+
+pictureButton.addEventListener("click", function(){
+    displayProfileImage();
+})
