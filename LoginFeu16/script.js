@@ -3,9 +3,8 @@ let imageHolder = document.getElementById("imageHolder")
     , nameHolder = document.getElementById("nameHolder")
     , loginButton = document.getElementById("loginButton")
     , logoutButton = document.getElementById("logoutButton")
-    ,pictureButton = document.getElementById("pictureButton")
-    , user
-    ,userProfileUrl;
+    , pictureButton = document.getElementById("pictureButton")
+    , user, userProfileUrl;
 //////Login
 let loginFunction = function () {
     let provider = new firebase.auth.GithubAuthProvider();
@@ -13,9 +12,14 @@ let loginFunction = function () {
         alert("ab");
         user = result.user;
         console.log(result.user);
-        console.log("user.photUrL :"+user.photoURL);
+        console.log("user.photUrL :" + user.photoURL);
         userProfileUrl = user.photoURL;
         displayProfileImage();
+        if(user.displayName === null){
+            nameHolder.innerHTML ="Welcome to LoginFeu16";
+        } else{
+        nameHolder.innerHTML ="Welcome: "+user.displayName;
+            }
     });
 };
 /////////Logout
@@ -32,7 +36,7 @@ let displayProfileImage = function () {
     let profileImage = document.createElement("img");
     profileImage.src = userProfileUrl;
     imageHolder.appendChild(profileImage);
-    console.log("Profile image: "+profileImage);
+    console.log("Profile image: " + profileImage);
 };
 loginButton.addEventListener("click", function () {
     loginFunction();
@@ -48,10 +52,8 @@ logoutButton.addEventListener("click", function () {
     nameHolder.innerHTML = "Inloggad";
     loginButton.style.display = "inline";
     logoutButton.style.display = "none";
-    console.log("Local storage: "+localStorage);
+    console.log("Local storage: " + localStorage);
 });
-
-
-pictureButton.addEventListener("click", function(){
+pictureButton.addEventListener("click", function () {
     displayProfileImage();
-})
+});
