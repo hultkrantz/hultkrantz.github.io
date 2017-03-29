@@ -44,4 +44,5 @@ let displayProfileImage = function(){
     let profileImage  = document.createElement("img");
     profileImage.src = localStorage.getItem(W.photoURL);
     imageHolder.appendChild(profileImage);
-}
+    console.log(profileImage);
+};
