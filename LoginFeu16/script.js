@@ -24,7 +24,7 @@ let logoutFuntion = function () {
 	
 ///////Functions//////
 
-/*if (loginButton.innerHTML = "Sign out") {
+if (loginButton.innerHTML = "Sign out") {
 	loginButton.addEventListener("click", function () {
 		logoutFuntion();
 		loginButton.innerHTML = "Sign in";
@@ -34,4 +34,4 @@ let logoutFuntion = function () {
 	loginFunction();
 	loginButton.innerHTML = "Sign out";
 });
-}*/
+}
