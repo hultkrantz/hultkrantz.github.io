@@ -1,8 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background: #123345;
     color: white;
+    background: -webkit-radial-gradient(circle, red, yellow, green);
+    background: -webkit-radial-gradient(circle, lightgrey, grey, lightgrey);
+    background: -webkit-radial-gradient(circle, lightgrey, grey, lightgrey);
+    background: radial-gradient(circle, lightgrey, grey, lightgrey);
+    /* Standard syntax */
 }
 
 #divContaienr {
@@ -12,7 +16,7 @@ body {
 
 button {
     margin-left: 5vw;
-    margin-top: 10vh;
+
     color: white;
     background-image: url(aaa.jpg);
     height: 40px;
@@ -27,6 +31,7 @@ button {
 #imageHolder {
     background-image: url(aaa.jpg);
     margin: 10vh;
+    margin-bottom: 0;
     height: 400px;
     width: 400px;
     border: 3px solid lightgrey;
@@ -39,7 +44,7 @@ button {
 }
 
 #nameHolder {
-    margin-top: -80px;
-    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-left: 8vh;
     font-size: 3em;
 }

@@ -9,7 +9,6 @@ let imageHolder = document.getElementById("imageHolder")
 let loginFunction = function () {
     let provider = new firebase.auth.GithubAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
-        alert("ab");
         user = result.user;
         console.log(result.user);
         console.log("user.photUrL :" + user.photoURL);
@@ -56,7 +55,4 @@ logoutButton.addEventListener("click", function () {
     loginButton.style.display = "inline";
     logoutButton.style.display = "none";
     console.log("Local storage: " + localStorage);
-});
-pictureButton.addEventListener("click", function () {
-    displayProfileImage();
 });
