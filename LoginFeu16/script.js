@@ -26,7 +26,8 @@ let loginFunction = function () {
 	/////////Secret User
 	secretFunction = function () {
 		if (user.email === "carl.hultkrantz@gmail.com") {
-			secretButton.style.visibility = "visible";
+			secretButton.style.display = "inline";
+			console.log("You are worthy")
 		} else {
 			console.log("You are not worthy")
 		}

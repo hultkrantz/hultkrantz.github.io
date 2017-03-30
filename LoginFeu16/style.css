@@ -48,5 +48,5 @@ button {
     font-size: 3em;
 }
 #secretButton {
-	visibility: hidden;
+	display: none;
 }
