@@ -47,3 +47,6 @@ button {
     margin-left: 8vh;
     font-size: 3em;
 }
+#secretButton {
+	visibility: hidden;
+}
