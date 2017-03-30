@@ -22,8 +22,7 @@ let loginFunction = function () {
 		else {
 			nameHolder.innerHTML = "Welcome " + user.email + "!";
 		}
-	});
-	/////////Secret User
+			/////////Secret User
 	secretFunction = function () {
 		if (user.email === "carl.hultkrantz@gmail.com") {
 			secretButton.style.display = "inline";
@@ -32,6 +31,8 @@ let loginFunction = function () {
 			console.log("You are not worthy")
 		}
 	};
+	});
+
 };
 /////////Logout
 let logoutFuntion = function () {
