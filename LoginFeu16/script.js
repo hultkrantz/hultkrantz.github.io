@@ -65,7 +65,7 @@ let googleFunction = function() {
 	});
 
 };
-}
+
 /////////Logout
 let logoutFuntion = function () {
 	firebase.auth().signOut().then(function (result) {
