@@ -6,12 +6,7 @@ let imageHolder = document.getElementById("imageHolder")
 	, secretButton = document.getElementById("secretButton")
 	, imageMessage = document.getElementById("imageMessage")
 	, user, userProfileUrl, profileImage;
-/////////Secret User
-let secretFunction = function () {
-	if (user.email === "carl.hultkrantz@gmail.com") {
-		secretButton.style.visibility = "visible";
-	}
-};
+
 //////Login
 let loginFunction = function () {
 	let provider = new firebase.auth.GithubAuthProvider();
@@ -29,6 +24,12 @@ let loginFunction = function () {
 			nameHolder.innerHTML = "Welcome " + user.email + "!";
 		}
 	});
+	/////////Secret User
+let secretFunction = function () {
+	if (user.email === "carl.hultkrantz@gmail.com") {
+		secretButton.style.visibility = "visible";
+	}
+};
 	secretFunction();
 };
 /////////Logout
