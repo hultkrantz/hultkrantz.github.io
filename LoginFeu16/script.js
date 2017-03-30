@@ -15,13 +15,13 @@ let loginFunction = function () {
 		userProfileUrl = user.photoURL;
 		displayProfileImage();
 		if (user.displayName !== null) {
-			nameHolder.innerHTML = "Loggedin with Github" + user.displayName + "!";
+			nameHolder.innerHTML = "Loggedin with Github. " + user.displayName + "!";
 		}
 		else if (firebase.auth().currentUser.providerData[0].displayName) {
-			nameHolder.innerHTML = "Loggedin with Github" + firebase.auth().currentUser.providerData[0].displayName + "!";
+			nameHolder.innerHTML = "Loggedin with Github. " + firebase.auth().currentUser.providerData[0].displayName + "!";
 		}
 		else {
-			nameHolder.innerHTML = "Loggedin with Github" + user.email + "!";
+			nameHolder.innerHTML = "Loggedin with Github. " + user.email + "!";
 		}
 			/////////Secret User
 	let secretFunction = function () {
@@ -33,6 +33,7 @@ let loginFunction = function () {
 		}
 	};
 		secretFunction();
+		console.log(user.photoURL)
 	});
 
 };
@@ -44,13 +45,13 @@ let googleFunction = function() {
 		userProfileUrl = user.photoURL;
 		displayProfileImage();
 		if (user.displayName !== null) {
-			nameHolder.innerHTML = "Loggedin with Google" + user.displayName + "!";
+			nameHolder.innerHTML = "Loggedin with Google. " + user.displayName + "!";
 		}
 		else if (firebase.auth().currentUser.providerData[0].displayName) {
-			nameHolder.innerHTML = "Loggedin with Google" + firebase.auth().currentUser.providerData[0].displayName + "!";
+			nameHolder.innerHTML = "Loggedin with Google. " + firebase.auth().currentUser.providerData[0].displayName + "!";
 		}
 		else {
-			nameHolder.innerHTML = "Loggedin with Google" + user.email + "!";
+			nameHolder.innerHTML = "Loggedin with Google. " + user.email + "!";
 		}
 			/////////Secret User
 	let secretFunction = function () {
@@ -62,6 +63,7 @@ let googleFunction = function() {
 		}
 	};
 		secretFunction();
+		console.log(user.photoURL)
 	});
 
 };
