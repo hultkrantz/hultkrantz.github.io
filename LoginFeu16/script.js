@@ -67,6 +67,7 @@ logoutButton.addEventListener("click", function () {
 	loginButton.style.display = "inline";
 	logoutButton.style.display = "none";
 	profileImage.src = "";
+	secretButton.style.display = "none";
 });
 secretButton.addEventListener("click", function () {
 	alert("The cake is a lie");
