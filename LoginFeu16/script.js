@@ -16,9 +16,12 @@ let loginFunction = function () {
         if (user.displayName === null) {
             nameHolder.innerHTML = "Welcome " + user.email+"!";
         }
-        else {
-            nameHolder.innerHTML = "Welcome " + user.displayName+"!";
-        }
+        else if (user.displayName === undefined){
+            console.log("Detta fungerar ju inte.");
+        } else {
+			nameHolder.innerHTML = "Welcome " + user.displayName+"!";
+			
+		}
     });
 };
 /////////Logout
