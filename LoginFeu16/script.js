@@ -12,8 +12,7 @@ let loginFunction = function () {
 	let provider = new firebase.auth.GithubAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		user = result.user;
-		userProfileUrl = user.photoURL;
-		displayProfileImage();
+
 		if (user.displayName !== null) {
 			nameHolder.innerHTML = "Loggedin with Github. " + user.displayName + "!";
 		}
@@ -32,6 +31,8 @@ let loginFunction = function () {
 			console.log("You are not worthy")
 		}
 	};
+				userProfileUrl = user.photoURL;
+		displayProfileImage();
 		secretFunction();
 		console.log(user.photoURL)
 	});
@@ -42,8 +43,7 @@ let googleFunction = function() {
 	let googleProvider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(googleProvider).then(function (result) {
 		user = result.user;
-		userProfileUrl = user.photoURL;
-		displayProfileImage();
+
 		if (user.displayName !== null) {
 			nameHolder.innerHTML = "Loggedin with Google. " + user.displayName + "!";
 		}
@@ -62,6 +62,8 @@ let googleFunction = function() {
 			console.log("You are not worthy")
 		}
 	};
+				userProfileUrl = user.photoURL;
+		displayProfileImage();
 		secretFunction();
 		console.log(user.photoURL)
 	});
