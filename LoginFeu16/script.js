@@ -96,6 +96,7 @@ logoutButton.addEventListener("click", function () {
 	console.log("logoutButton pressed");
 	nameHolder.innerHTML = "Another time then";
 	loginButton.style.display = "inline";
+	googleLogin.style.display = "inline";
 	logoutButton.style.display = "none";
 	profileImage.src = "";
 	secretButton.style.display = "none";
@@ -107,6 +108,7 @@ secretButton.addEventListener("click", function () {
 googleLogin.addEventListener("click", function () {
 	googleFunction();
 	console.log("googleLogin pressed");
+	googleLogin.style.display = "none";
 	loginButton.style.display = "none";
 	logoutButton.style.display = "inline";
 });
