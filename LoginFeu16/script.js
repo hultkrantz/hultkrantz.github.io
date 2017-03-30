@@ -31,10 +31,9 @@ let loginFunction = function () {
 			console.log("You are not worthy")
 		}
 	};
-				userProfileUrl = user.photoURL;
+				userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
 		secretFunction();
-		console.log(user.photoURL)
 	});
 
 };
@@ -62,7 +61,7 @@ let googleFunction = function() {
 			console.log("You are not worthy")
 		}
 	};
-				userProfileUrl = user.photoURL;
+				userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
 		secretFunction();
 		console.log(user.photoURL)
