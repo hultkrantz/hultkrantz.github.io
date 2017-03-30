@@ -7,9 +7,9 @@ let imageHolder = document.getElementById("imageHolder")
 	, imageMessage = document.getElementById("imageMessage")
 	, user, userProfileUrl, profileImage;
 /////////Secret User
-let secretFunction = function(){
-	if(user.email === carl.hultkrantz@gmail.com){
-		secretButton.style.visibility ="visible";
+let secretFunction = function () {
+	if (user.email === carl.hultkrantz@gmail.com) {
+		secretButton.style.visibility = "visible";
 	}
 };
 //////Login
@@ -23,15 +23,14 @@ let loginFunction = function () {
 			nameHolder.innerHTML = "Welcome " + user.displayName + "!";
 		}
 		else if (firebase.auth().currentUser.providerData[0].displayName) {
-			nameHolder.innerHTML = "Welcome " + firebase.auth().currentUser.providerData[0].displayName+"!";
+			nameHolder.innerHTML = "Welcome " + firebase.auth().currentUser.providerData[0].displayName + "!";
 		}
 		else {
 			nameHolder.innerHTML = "Welcome " + user.email + "!";
 		}
 	});
-		secretFunction();
+	secretFunction();
 };
-
 /////////Logout
 let logoutFuntion = function () {
 	firebase.auth().signOut().then(function (result) {
@@ -41,7 +40,6 @@ let logoutFuntion = function () {
 		console.log("Det gick inte som vi ville" + error);
 		nameHolder.innerHTML = "Somting went wrong";
 	});
-
 };
 ///////Functions//////
 let displayProfileImage = function () {
