@@ -9,7 +9,7 @@ let imageHolder = document.getElementById("imageHolder")
 	, user, userProfileUrl, profileImage;
 //////Login
 let loginFunction = function () {
-	if(localStorage.getItem("userLoggedin") === "one";){
+	if(localStorage.getItem("userLoggedin") === "one"){
 		logoutFuntion();	
 	} else {
 	let provider = new firebase.auth.GithubAuthProvider();
