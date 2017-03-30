@@ -31,6 +31,7 @@ let loginFunction = function () {
 			console.log("You are not worthy")
 		}
 	};
+		secretFunction();
 	});
 
 };
