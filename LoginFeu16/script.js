@@ -70,6 +70,7 @@ let googleFunction = function() {
 let logoutFuntion = function () {
 	firebase.auth().signOut().then(function (result) {
 		console.log("You are no more my friend");
+		delete();
 	}).catch(function (error) {
 		// Utloggning misslyckades
 		console.log("Det gick inte som vi ville" + error);
