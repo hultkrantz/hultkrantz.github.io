@@ -23,7 +23,7 @@ let loginFunction = function () {
 			nameHolder.innerHTML = "Welcome " + user.email + "!";
 		}
 			/////////Secret User
-	secretFunction = function () {
+	let secretFunction = function () {
 		if (user.email === "carl.hultkrantz@gmail.com") {
 			secretButton.style.display = "inline";
 			console.log("You are worthy")
