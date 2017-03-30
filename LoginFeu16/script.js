@@ -9,10 +9,6 @@ let imageHolder = document.getElementById("imageHolder")
 	, user, userProfileUrl, profileImage;
 //////Login
 let loginFunction = function () {
-	if(localStorage.getItem("userLoggedin") === "one"){
-		logoutFuntion();	
-		loginFunction();
-	} else {
 	let provider = new firebase.auth.GithubAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		user = result.user;
@@ -26,20 +22,19 @@ let loginFunction = function () {
 		}
 		else {
 			nameHolder.innerHTML = "Welcome " + user.email + "!";
-		} 
-		localStorage.setItem("userLoggedin", "one");
+		}
 			/////////Secret User
 	let secretFunction = function () {
 		if (user.email === "carl.hultkrantz@gmail.com") {
 			secretButton.style.display = "inline";
-			console.log("You are worthy");
+			console.log("You are worthy")
 		} else {
-			console.log("You are not worthy");
+			console.log("You are not worthy")
 		}
 	};
 		secretFunction();
 	});
-}
+
 };
 ////////Google
 let googleFunction = function() {
@@ -57,7 +52,6 @@ let googleFunction = function() {
 		else {
 			nameHolder.innerHTML = "Welcome " + user.email + "!";
 		}
-		localStorage.setItem("userLoggedin", "one");
 			/////////Secret User
 	let secretFunction = function () {
 		if (user.email === "carl.hultkrantz@gmail.com") {
@@ -80,7 +74,6 @@ let logoutFuntion = function () {
 		// Utloggning misslyckades
 		console.log("Det gick inte som vi ville" + error);
 		nameHolder.innerHTML = "Somting went wrong";
-		localStorage.removeItem("userLoggedin");
 	});
 };
 ///////Functions//////
