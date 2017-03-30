@@ -11,6 +11,7 @@ let imageHolder = document.getElementById("imageHolder")
 let loginFunction = function () {
 	if(localStorage.getItem("userLoggedin") === "one"){
 		logoutFuntion();	
+		loginFunction();
 	} else {
 	let provider = new firebase.auth.GithubAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
@@ -79,6 +80,7 @@ let logoutFuntion = function () {
 		// Utloggning misslyckades
 		console.log("Det gick inte som vi ville" + error);
 		nameHolder.innerHTML = "Somting went wrong";
+		localStorage.removeItem("userLoggedin");
 	});
 };
 ///////Functions//////
