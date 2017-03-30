@@ -89,6 +89,7 @@ loginButton.addEventListener("click", function () {
 	loginFunction();
 	console.log("loginButton pressed");
 	loginButton.style.display = "none";
+	googleLogin.style.display = "none";
 	logoutButton.style.display = "inline";
 });
 logoutButton.addEventListener("click", function () {
