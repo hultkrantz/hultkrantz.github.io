@@ -54,7 +54,7 @@ let googleFunction = function() {
 		}
 			/////////Secret User
 	let secretFunction = function () {
-		if (user.email === "carl.hultkrantz@gmail.com") {
+		if (user.email === "carl.hultkrantz@gmail.com" || "feldtsen@gmail.com") {
 			secretButton.style.display = "inline";
 			console.log("You are worthy")
 		} else {
