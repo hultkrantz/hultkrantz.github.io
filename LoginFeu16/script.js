@@ -2,6 +2,7 @@
 let imageHolder = document.getElementById("imageHolder")
 	, nameHolder = document.getElementById("nameHolder")
 	, loginButton = document.getElementById("loginButton")
+	, googleLogin = document.getElementById("googleLogin")
 	, logoutButton = document.getElementById("logoutButton")
 	, secretButton = document.getElementById("secretButton")
 	, imageMessage = document.getElementById("imageMessage")
@@ -35,6 +36,36 @@ let loginFunction = function () {
 	});
 
 };
+////////Google
+let googleFunction = function() {
+	let googleProvider = new firebase.auth.GoogleAuthProvider();
+	firebase.auth().signInWithPopup(googleProvider).then(function (result) {
+		user = result.user;
+		userProfileUrl = user.photoURL;
+		displayProfileImage();
+		if (user.displayName !== null) {
+			nameHolder.innerHTML = "Welcome " + user.displayName + "!";
+		}
+		else if (firebase.auth().currentUser.providerData[0].displayName) {
+			nameHolder.innerHTML = "Welcome " + firebase.auth().currentUser.providerData[0].displayName + "!";
+		}
+		else {
+			nameHolder.innerHTML = "Welcome " + user.email + "!";
+		}
+			/////////Secret User
+	let secretFunction = function () {
+		if (user.email === "carl.hultkrantz@gmail.com") {
+			secretButton.style.display = "inline";
+			console.log("You are worthy")
+		} else {
+			console.log("You are not worthy")
+		}
+	};
+		secretFunction();
+	});
+
+};
+}
 /////////Logout
 let logoutFuntion = function () {
 	firebase.auth().signOut().then(function (result) {
@@ -71,4 +102,11 @@ logoutButton.addEventListener("click", function () {
 });
 secretButton.addEventListener("click", function () {
 	alert("The cake is a lie");
+});
+
+googleLogin.addEventListener("click", function () {
+	googleFunction();
+	console.log("googleLogin pressed");
+	loginButton.style.display = "none";
+	logoutButton.style.display = "inline";
 });
