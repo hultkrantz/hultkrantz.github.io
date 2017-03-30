@@ -23,7 +23,7 @@ let loginFunction = function () {
 			nameHolder.innerHTML = "Welcome " + user.email + "!";
 		}
 	});
-	
+		secretFunction();
 };
 /////////Secret User
 let secretFunction = function(){
@@ -40,6 +40,7 @@ let logoutFuntion = function () {
 		console.log("Det gick inte som vi ville" + error);
 		nameHolder.innerHTML = "Somting went wrong";
 	});
+
 };
 ///////Functions//////
 let displayProfileImage = function () {
