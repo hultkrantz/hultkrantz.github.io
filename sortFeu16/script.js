@@ -39,10 +39,10 @@ window.addEventListener('load', function () {
 			});
 		})
 	}
-	sortFunction(btnSortNamn, 'namn');
-	sortFunction(btnSortFamilj, 'familj');
-	sortFunction(btnSortAntal, 'antal');
-	sortFunction(btnSortFärg, 'färg');
+	sortFunction(alfabeticSort, 'namn');
+	sortFunction(sizeSort, 'familj');
+	sortFunction(priceLowToHigh, 'antal');
+	sortFunction(priceHighToLow, 'färg');
 	inputAntalResultat.addEventListener('keypress', function (event) {
 		if (event.keyCode == 13) {
 			let antal = Number(inputAntalResultat.value);
