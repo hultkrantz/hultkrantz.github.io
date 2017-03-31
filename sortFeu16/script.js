@@ -15,14 +15,15 @@ window.addEventListener('load', function () {
 			, färg: färg.value
 		});
 	});
-	firebase.database().ref('djur/').on('child_added', function (snapshot, keyStone) {
+	firebase.database().ref('stock/').on('child_added', function (snapshot, keyStone) {
+	firebase.database().ref('stock/').on('child_added', function (snapshot, keyStone) {
 		console.log('First time or change in database. keyStone: ' + keyStone);
 		let data = snapshot.val();
 		console.log('data:', data);
-		addAnimalToTable(data);
+		addItemToTable(data);
 	});
 
-	function addAnimalToTable(data) {
+	function addItemToTable(data) {
 		let tr = document.createElement('tr');
 		tr.innerHTML = `<td>${data.namn}</td> <td>${data.familj}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
 		tableVisaDjur.appendChild(tr);
@@ -31,8 +32,10 @@ window.addEventListener('load', function () {
 	function sortFunction(button, sortKey) {
 		button.addEventListener('click', function (event) {
 			tableVisaDjur.innerHTML = '';
-			//firebase.database().ref('djur/').off('value')
-			firebase.database().ref('djur/').orderByChild(sortKey).once('value', function (snapshot) {
+			//firebase.database().ref('stock/').off('value')
+			firebase.database().ref('stock/').orderByChild(sortKey).once('value', function (snapshot) {
+			//firebase.database().ref('stock/').off('value')
+			firebase.database().ref('stock/').orderByChild(sortKey).once('value', function (snapshot) {
 				snapshot.forEach(animalRef => {
 					addAnimalToTable(animalRef.val());
 				})
@@ -52,7 +55,7 @@ window.addEventListener('load', function () {
 				// varna användaren
 			}
 			else {
-				firebase.database().ref('djur/').limitToFirst(antal).once('value', function (snapshot) {
+				firebase.database().ref('stock/').limitToFirst(antal).once('value', function (snapshot) {
 					snapshot.forEach(animalRef => {
 						addAnimalToTable(animalRef.val());
 					})

@@ -19,6 +19,7 @@
 	</div>
 	<div> Sort after:
 		<select name="selectSort" id="selectSort" value="">
+			<option value="" disabled selected>Select something...</option>
 			<option id="alfabeticSort" value="Alfabetic">Alfabetic</option>
 			<option id="sizeSort" value="Size">Size</option>
 			<option id="priceLowToHigh" value="Price, low to high">Price, low to high</option>
@@ -26,8 +27,8 @@
 		</select>
 
 	</div>
-	<p> Antal resultat:
-		<input id="inputAntalResultat" placeholder="500" /> </p>
+	<!--<p> Antal resultat:
+		<input id="inputAntalResultat" placeholder="500" /> </p> -->
 	<table id="itemTable"></table>
 	
 <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
