@@ -13,6 +13,14 @@ h1 {
 	margin: 2px;
 	background-color: aliceblue;
 }
+#noitemTable td{
+	display: inline-block;
+	border: 2px solid black;
+	width: 100px;
+	box-shadow: 2px 2px grey;
+	margin: 2px;
+	background-color: aliceblue;
+}
 body {
 	background: rgba(212, 228, 239, 1);
 	background: -moz-linear-gradient(left, rgba(212, 228, 239, 1) 0%, rgba(134, 174, 204, 1) 100%);

@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
 			alert("Input empty")
 		} else {
 		firebase.database().ref('stock/').push({
-			name: inputItemName.value
+			item: inputItemName.value
 			, quantity: Number(inputQuantity.value)
 			, price: Number(inputPrice.value)
 			
@@ -26,14 +26,13 @@ window.addEventListener('load', function () {
 			}
 	});
 			firebase.database().ref('stock/').on('child_added', function (snapshot, keyStone) {
-				console.log('First time or change in database. keyStone: ' + keyStone);
 				let data = snapshot.val();
 				addItemToTable(data);
 			});
 
 			function addItemToTable(data) {
 				let tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.name}</td> <td>${data.quantity}</td> <td>${data.price}</td>`;
+				tr.innerHTML = `<td>${data.item}</td> <td>${data.quantity}</td> <td>${data.price}</td>`;
 				itemTable.appendChild(tr);
 			}
 
@@ -52,7 +51,6 @@ window.addEventListener('load', function () {
 			sortFunction(alfabeticSort, 'item');
 			sortFunction(quantitySort, 'quantity');
 			sortFunction(priceLowToHigh, 'price');
-			sortFunction(priceHighToLow, 'price');
 			numberOfViews.addEventListener('keypress', function (event) {
 				if (event.keyCode == 13) {
 					let viewNumber = Number(numberOfViews.value);
