@@ -13,10 +13,12 @@ window.addEventListener('load', function () {
 			addItemButton.addEventListener('click', function (event) {
 				console.log('addItemButton pressed');
 				firebase.database().ref('stock/').push({
+					
 					name: inputItemName.value
 					, size: inputSize.value
 					, price: inputPrice.value
 				});
+				console.log(name);
 			});
 			firebase.database().ref('stock/').on('child_added', function (snapshot, keyStone) {
 				firebase.database().ref('stock/').on('child_added', function (snapshot, keyStone) {
