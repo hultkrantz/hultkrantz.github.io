@@ -18,32 +18,29 @@
 		<button id="addItemButton">Add item to stock</button>
 	</div>
 	<div> Sort after:
-		<select name="selectSort" id="selectSort" value="abc">
+		<select name="selectSort" id="selectSort" value="abc" onchange="sortfunction()">
 			<option value="a" disabled selected>Select something...</option>
 			<option id="alfabeticSort" value="Alfabetic">Alfabetic</option>
 			<option id="sizeSort" value="Size">Size</option>
 			<option id="priceLowToHigh" value="Price, low to high">Price, low to high</option>
 			<option id="priceHighToLow" value=">Price, High to low<">Price, high to low</option>
 		</select>
-
 	</div>
-	<!--<p> Antal resultat:
-		<input id="inputAntalResultat" placeholder="500" /> </p> -->
+	<input type="text" id="numberOfViews" placeholder="Number Of views" value="10">
 	<table id="itemTable"></table>
-	
-<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCjGQW2EzOgosId7QQtugHQdytJw48_bl4",
-    authDomain: "sortfeu16.firebaseapp.com",
-    databaseURL: "https://sortfeu16.firebaseio.com",
-    projectId: "sortfeu16",
-    storageBucket: "sortfeu16.appspot.com",
-    messagingSenderId: "586210617415"
-  };
-  firebase.initializeApp(config);
-</script>
+	<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCjGQW2EzOgosId7QQtugHQdytJw48_bl4"
+			, authDomain: "sortfeu16.firebaseapp.com"
+			, databaseURL: "https://sortfeu16.firebaseio.com"
+			, projectId: "sortfeu16"
+			, storageBucket: "sortfeu16.appspot.com"
+			, messagingSenderId: "586210617415"
+		};
+		firebase.initializeApp(config);
+	</script>
 	<script src="script.js"></script>
 </body>
 
