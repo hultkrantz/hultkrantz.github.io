@@ -8,10 +8,12 @@ body {
 	background: linear-gradient(to right, rgba(212, 228, 239, 1) 0%, rgba(134, 174, 204, 1) 100%);
 	filter: progid: DXImageTransform.Microsoft.gradient( startC box-shadow: 2px 2px 2px 2px;
 }
-body div{
-	border: 2px solid red;
+
+#numberOfViews {
+	width: 15px;
 }
 
-#itemTable{
-	
+#itemTable {
+	border: 2px solid red;
+	background-color: red;
 }

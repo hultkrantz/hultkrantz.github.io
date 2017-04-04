@@ -4,28 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>sortFeu16</title>
-	<link rel="stylesheet" href="style.css"> </head>
+	<link rel="stylesheet" type="text/css" href="style.css"> </head>
 
 <body>
 	<h1>sortFeu16</h1>
 	<div>
 		<input id="inputItemName" type="text" placeholder="Item" />
 		<br>
-		<input id="inputSize" type="text" placeholder="Size" />
+		<input id="inputQuantity" type="text" placeholder="Quantity" />
 		<br>
 		<input id="inputPrice" type="text" placeholder="Price" />
 		<br>
 		<button id="addItemButton">Add item to stock</button>
 	</div>
 	<div> Sort after:
-		<select name="selectSort" id="selectSort" value="abc" onchange="sortfunction()">
-			<option value="a" disabled selected>Select something...</option>
-			<option id="alfabeticSort" value="Alfabetic">Alfabetic</option>
-			<option id="sizeSort" value="Size">Size</option>
-			<option id="priceLowToHigh" value="Price, low to high">Price, low to high</option>
-			<option id="priceHighToLow" value=">Price, High to low<">Price, high to low</option>
-		</select>
+		<button id="alfabeticSort" >Name</button>
+		<button id="quantitySort">Quantity</button>
+		<button id="priceLowToHigh">Price, LtH</button>
+		<button id="priceHighToLow">Price, HtL</button>
 	</div>
+	Number Of views
 	<input type="text" id="numberOfViews" placeholder="Number Of views" value="10">
 	<table id="itemTable"></table>
 	<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
