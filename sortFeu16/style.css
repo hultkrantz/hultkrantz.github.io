@@ -1,3 +1,18 @@
+h1 {
+    text-shadow: 2px 2px 8px grey;
+}
+#numberOfViews {
+	width: 25px;
+}
+
+#itemTable td {
+	display: inline-block;
+	border: 1px solid black;
+	width: 100px;
+	box-shadow: 2px 2px grey;
+	margin: 2px;
+	background-color: aliceblue;
+}
 body {
 	background: rgba(212, 228, 239, 1);
 	background: -moz-linear-gradient(left, rgba(212, 228, 239, 1) 0%, rgba(134, 174, 204, 1) 100%);
@@ -9,11 +24,3 @@ body {
 	filter: progid: DXImageTransform.Microsoft.gradient( startC box-shadow: 2px 2px 2px 2px;
 }
 
-#numberOfViews {
-	width: 15px;
-}
-
-#itemTable {
-	border: 2px solid red;
-	background-color: red;
-}

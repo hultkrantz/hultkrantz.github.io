@@ -33,7 +33,7 @@ window.addEventListener('load', function () {
 
 			function addItemToTable(data) {
 				let tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.name}</td> <td>${data.quantity}</td> <td>${data.price}</td> <td style="width: 50px;"></td>`;
+				tr.innerHTML = `<td>${data.name}</td> <td>${data.quantity}</td> <td>${data.price}</td>`;
 				itemTable.appendChild(tr);
 			}
 
