@@ -1,0 +1,14 @@
+body {
+	background-color: lightblue;
+}
+.searchResult > div{
+	width: 450px;
+}
+
+.searchResult> div a{
+	font-size: 25px;
+}
+
+.searchResult > div span {
+	color: green;
+}
