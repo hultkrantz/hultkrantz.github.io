@@ -13,11 +13,11 @@ window.addEventListener('load', function() {
 			
 			
 			addButton.addEventListener('click', function(event) {
-				console.log('Klickat lägga till djur');
-				firebase.database().ref('djur/').push({
+				console.log('Clicked to add');
+				firebase.database().ref('comments/').push({
 					comment: comment.value,
 					rating: rating.value,
-					antal: Number(antal.value),
+					//antal: Number(antal.value),
 				});
 			});
 			
