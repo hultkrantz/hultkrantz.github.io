@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
 			let comment = document.getElementById('inputComment');
-			let familj = document.getElementById('inputFamilj');
+			let rating = document.getElementById('inputRating');
 			let antal = document.getElementById('inputAntal');
 			let färg = document.getElementById('inputFärg');
 			let addButton = document.getElementById('addButton');
@@ -16,9 +16,8 @@ window.addEventListener('load', function() {
 				console.log('Klickat lägga till djur');
 				firebase.database().ref('djur/').push({
 					comment: comment.value,
-					familj: familj.value,
+					rating: rating.value,
 					antal: Number(antal.value),
-					färg: färg.value
 				});
 			});
 			
@@ -30,7 +29,7 @@ window.addEventListener('load', function() {
 			});
 			function addAnimalToTable(data) {
 				let tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.comment}</td> <td>${data.familj}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
+				tr.innerHTML = `<td>${data.comment}</td> <td>${data.rating}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
 				tableVisaDjur.appendChild(tr);
 			}
 			
@@ -47,7 +46,7 @@ window.addEventListener('load', function() {
 				})
 			}
 			sortFunction(btnSortNamn, 'comment');
-			sortFunction(btnSortFamilj, 'familj');
+			sortFunction(btnSortFamilj, 'rating');
 			sortFunction(btnSortAntal, 'antal');
 			sortFunction(btnSortFärg, 'färg');
 			
