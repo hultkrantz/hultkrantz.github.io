@@ -21,10 +21,10 @@ window.addEventListener('load', function() {
 				});
 			});
 			
-			firebase.database().ref('djur/').on('child_added', function(snapshot, prevChildKey) {
+			firebase.database().ref('comments/').on('child_added', function(snapshot, prevChildKey) {
 				console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
 				let data = snapshot.val();
-				//console.log('data:', data);
+				console.log('data:', data);
 				addAnimalToTable(data);
 			});
 			function addAnimalToTable(data) {
@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
 					if( isNaN(antal) ) {
 						// varna användaren
 					} else {
-						firebase.database().ref('djur/').limitToFirst(antal)
+						firebase.database().ref('comments/').limitToFirst(antal)
 						.once('value', function(snapshot) {
 								snapshot.forEach( animalRef => {
 									addAnimalToTable(animalRef.val());
