@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
 			let antal = document.getElementById('inputAntal');
 			let färg = document.getElementById('inputFärg');
 			let addButton = document.getElementById('addButton');
-			let tableVisaDjur = document.getElementById('tableVisaDjur');
+			let tableComments = document.getElementById('tableComments');
 			let btnSortNamn = document.getElementById('btnSortNamn');
 			let btnSortFamilj = document.getElementById('btnSortFamilj');
 			let btnSortAntal = document.getElementById('btnSortAntal');
@@ -30,12 +30,12 @@ window.addEventListener('load', function() {
 			function addCommentToTable(data) {
 				let tr = document.createElement('tr');
 				tr.innerHTML = `<td>${data.comment}</td> <td>${data.rating}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
-				tableVisaDjur.appendChild(tr);
+				tableComments.appendChild(tr);
 			}
 			
 			function sortFunction(button, sortKey) {
 				button.addEventListener('click', function(event) {
-					tableVisaDjur.innerHTML = '';
+					tableComments.innerHTML = '';
 					//firebase.database().ref('djur/').off('value')
 					firebase.database().ref('djur/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
 			inputAntalResultat.addEventListener('keypress', function(event) {
 				if( event.keyCode == 13 ) {
 					let antal = Number(inputAntalResultat.value);
-					tableVisaDjur.innerHTML = '';
+					tableComments.innerHTML = '';
 					console.log('inputAntalResultat: antal=' + antal);
 					if( isNaN(antal) ) {
 						// varna användaren
