@@ -37,7 +37,7 @@ window.addEventListener('load', function() {
 				button.addEventListener('click', function(event) {
 					tableComments.innerHTML = '';
 					//firebase.database().ref('djur/').off('value')
-					firebase.database().ref('djur/').orderByChild(sortKey)
+					firebase.database().ref('comments/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
 						snapshot.forEach( commentRef => {
 							addCommentToTable(commentRef.val());
