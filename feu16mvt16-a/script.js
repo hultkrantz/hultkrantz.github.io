@@ -39,8 +39,8 @@ window.addEventListener('load', function() {
 					//firebase.database().ref('djur/').off('value')
 					firebase.database().ref('djur/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
-						snapshot.forEach( animalRef => {
-							addAnimalToTable(animalRef.val());
+						snapshot.forEach( commentRef => {
+							addAnimalToTable(commentRef.val());
 						})
 					});
 				})
@@ -60,8 +60,8 @@ window.addEventListener('load', function() {
 					} else {
 						firebase.database().ref('comments/').limitToFirst(antal)
 						.once('value', function(snapshot) {
-								snapshot.forEach( animalRef => {
-									addAnimalToTable(animalRef.val());
+								snapshot.forEach( commentRef => {
+									addAnimalToTable(commentRef.val());
 								})
 						});
 					}
