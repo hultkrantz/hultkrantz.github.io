@@ -1,10 +1,10 @@
 window.addEventListener('load', function() {
-			let comment = document.getElementById('inputComment');
-			let rating = document.getElementById('inputRating');
+			let namn = document.getElementById('inputNamn');
+			let familj = document.getElementById('inputFamilj');
 			let antal = document.getElementById('inputAntal');
 			let färg = document.getElementById('inputFärg');
 			let addButton = document.getElementById('addButton');
-			let tableComments = document.getElementById('tableComments');
+			let tableVisaDjur = document.getElementById('tableVisaDjur');
 			let btnSortNamn = document.getElementById('btnSortNamn');
 			let btnSortFamilj = document.getElementById('btnSortFamilj');
 			let btnSortAntal = document.getElementById('btnSortAntal');
@@ -13,55 +13,56 @@ window.addEventListener('load', function() {
 			
 			
 			addButton.addEventListener('click', function(event) {
-				console.log('Clicked to add');
-				firebase.database().ref('comments/').push({
-					comment: comment.value,
-					rating: rating.value,
-					//antal: Number(antal.value),
+				console.log('Klickat lägga till djur');
+				firebase.database().ref('djur/').push({
+					namn: namn.value,
+					familj: familj.value,
+					antal: Number(antal.value),
+					färg: färg.value
 				});
 			});
 			
-			firebase.database().ref('comments/').on('child_added', function(snapshot, prevChildKey) {
+			firebase.database().ref('djur/').on('child_added', function(snapshot, prevChildKey) {
 				console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
 				let data = snapshot.val();
-				console.log('data:', data);
-				addCommentToTable(data);
+				//console.log('data:', data);
+				addAnimalToTable(data);
 			});
-			function addCommentToTable(data) {
+			function addAnimalToTable(data) {
 				let tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.comments}</td> <td>${data.rating}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
-				tableComments.appendChild(tr);
+				tr.innerHTML = `<td>${data.namn}</td> <td>${data.familj}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
+				tableVisaDjur.appendChild(tr);
 			}
 			
 			function sortFunction(button, sortKey) {
 				button.addEventListener('click', function(event) {
-					tableComments.innerHTML = '';
+					tableVisaDjur.innerHTML = '';
 					//firebase.database().ref('djur/').off('value')
-					firebase.database().ref('comments/').orderByChild(sortKey)
+					firebase.database().ref('djur/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
-						snapshot.forEach( commentRef => {
-							addCommentToTable(commentRef.val());
+						snapshot.forEach( animalRef => {
+							addAnimalToTable(animalRef.val());
 						})
 					});
 				})
 			}
-			sortFunction(btnSortNamn, 'comment');
-			sortFunction(btnSortFamilj, 'rating');
+			sortFunction(btnSortNamn, 'namn');
+			sortFunction(btnSortFamilj, 'familj');
 			sortFunction(btnSortAntal, 'antal');
 			sortFunction(btnSortFärg, 'färg');
 			
 			inputAntalResultat.addEventListener('keypress', function(event) {
 				if( event.keyCode == 13 ) {
 					let antal = Number(inputAntalResultat.value);
-					tableComments.innerHTML = '';
+					tableVisaDjur.innerHTML = '';
 					console.log('inputAntalResultat: antal=' + antal);
 					if( isNaN(antal) ) {
 						// varna användaren
 					} else {
-						firebase.database().ref('comments/').limitToFirst(antal)
+						firebase.database().ref('djur/').limitToFirst(antal)
 						.once('value', function(snapshot) {
-								snapshot.forEach( commentRef => {
-									addCommentToTable(commentRef.val());
+								snapshot.forEach( animalRef => {
+									addAnimalToTable(animalRef.val());
 								})
 						});
 					}
