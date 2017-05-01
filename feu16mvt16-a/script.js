@@ -25,9 +25,9 @@ window.addEventListener('load', function() {
 				console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
 				let data = snapshot.val();
 				console.log('data:', data);
-				addAnimalToTable(data);
+				addCommentToTable(data);
 			});
-			function addAnimalToTable(data) {
+			function addCommentToTable(data) {
 				let tr = document.createElement('tr');
 				tr.innerHTML = `<td>${data.comment}</td> <td>${data.rating}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
 				tableVisaDjur.appendChild(tr);
@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
 					firebase.database().ref('djur/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
 						snapshot.forEach( commentRef => {
-							addAnimalToTable(commentRef.val());
+							addCommentToTable(commentRef.val());
 						})
 					});
 				})
@@ -61,7 +61,7 @@ window.addEventListener('load', function() {
 						firebase.database().ref('comments/').limitToFirst(antal)
 						.once('value', function(snapshot) {
 								snapshot.forEach( commentRef => {
-									addAnimalToTable(commentRef.val());
+									addCommentToTable(commentRef.val());
 								})
 						});
 					}
