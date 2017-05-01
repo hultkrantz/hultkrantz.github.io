@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
 			});
 			function addCommentToTable(data) {
 				let tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.comment}</td> <td>${data.rating}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
+				tr.innerHTML = `<td>${data.comments}</td> <td>${data.rating}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
 				tableComments.appendChild(tr);
 			}
 			
