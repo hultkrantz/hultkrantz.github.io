@@ -1,7 +1,7 @@
 window.addEventListener('load', function() {
-			let namn = document.getElementById('inputComment');
+			let namn = document.getElementById('inputNamn');
 			let familj = document.getElementById('inputFamilj');
-			let antal = document.getElementById('inputRating');
+			let antal = document.getElementById('inputAntal');
 			let färg = document.getElementById('inputFärg');
 			let addButton = document.getElementById('addButton');
 			let tableVisaDjur = document.getElementById('tableVisaDjur');
