@@ -23,7 +23,7 @@ let displayMessage = function (messages) {
             messageArray.push(`${messages[key].user}: ${messages[key].message}`);
         }
         for (let i = 5; i >= 0; i--) {
-			consol.log(messageArray[i]);
+			console.log(messageArray[i]);
             let textContainer = document.createElement("li");
             textContainer.innerHTML = messageArray[i];
             chatWindow.appendChild(textContainer);
