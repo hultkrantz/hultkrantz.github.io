@@ -48,14 +48,6 @@ let displayMessage = function (messages) {
     /////////////////////
     /////////event///////
     /////////////////////
-loginButton.addEventListener("click", function (event) {
-	if(loginButton.innerHTML == "Logout"){
-		localStorage.clear();
-		loginButton.innerHTML = "Login";
-		messageToUser.innerHTML =  "Logedout";
-		messageToUser.style.color = "red";
-			} else
-    userLogin();
 });
 sendChatInput.addEventListener("click", function (vent) {
     
