@@ -10,25 +10,26 @@
 	<container>
 		<h1>feu16mvt16</h1>
 		<div>
-		<p>Ge ditt betyg på den här badplatsen!</p>
+			<p>Ge ditt betyg på den här badplatsen!</p>
+			<div class="rating"> <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> </div>
 			<input id="chatInput" type="text" placeholder="Skrvi vad du tycker">
 			<button id="sendChatInput">Send</button>
 			<ul id="chatWindow"> </ul>
 		</div>
 	</container>
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBNlNjo-j1rjCh-ovdMee8e0BhSHhFjVXA",
-    authDomain: "feu16mvt16.firebaseapp.com",
-    databaseURL: "https://feu16mvt16.firebaseio.com",
-    projectId: "feu16mvt16",
-    storageBucket: "feu16mvt16.appspot.com",
-    messagingSenderId: "619640994653"
-  };
-  firebase.initializeApp(config);
-</script>
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBNlNjo-j1rjCh-ovdMee8e0BhSHhFjVXA"
+			, authDomain: "feu16mvt16.firebaseapp.com"
+			, databaseURL: "https://feu16mvt16.firebaseio.com"
+			, projectId: "feu16mvt16"
+			, storageBucket: "feu16mvt16.appspot.com"
+			, messagingSenderId: "619640994653"
+		};
+		firebase.initializeApp(config);
+	</script>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 

@@ -1,5 +1,6 @@
 var userName = document.getElementById("userName")
     , loginButton = document.getElementById("loginButton")
+	/*remove loginButton add Goolge login*/
     , chatWindow = document.getElementById("chatWindow")
     , sendChatInput = document.getElementById("sendChatInput")
     , chatInput = document.getElementById("chatInput")
@@ -7,6 +8,7 @@ var userName = document.getElementById("userName")
 /////////////////////
 //////functions//////
 /////////////////////
+/*No need for this function?*/
 let userLogin = function () {
         console.log("inside userLogin")
         if (userName.value === "") {
@@ -27,6 +29,7 @@ let userLogin = function () {
 let pushMessage = function () {
     let message = chatInput.value;
     let loggedinUser = localStorage.getItem("loggedinUser");
+	/*Get userName from google / facebook*/
     console.log(loggedinUser);
     firebase.database().ref("messages").push({
         message: message
