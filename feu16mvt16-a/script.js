@@ -23,11 +23,16 @@ let displayMessage = function (messages) {
             messageArray.push(`${messages[key].user}: ${messages[key].message}`);
         }
         for (let i = 5; i >= 0; i--) {
-			console.log(messageArray[i]);
+			if (messageArray[i] = undefined ){
+				console.log(messageArray[i]);
+			} else {
+				
+			
             let textContainer = document.createElement("li");
             textContainer.innerHTML = messageArray[i];
             chatWindow.appendChild(textContainer);
         }
+			}
     }
     /////////////////////
     /////////event///////
