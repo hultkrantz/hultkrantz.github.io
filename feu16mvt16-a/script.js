@@ -48,7 +48,6 @@ let displayMessage = function (messages) {
     /////////////////////
     /////////event///////
     /////////////////////
-});
 sendChatInput.addEventListener("click", function (vent) {
     
     if (chatInput.value != "") {
