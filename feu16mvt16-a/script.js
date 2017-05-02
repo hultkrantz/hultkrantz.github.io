@@ -19,15 +19,13 @@ let pushMessage = function () {
 let displayMessage = function (messages) {
         let messageArray = [];
         for (let key in messages) {
-            console.log(`${messages[key].user}: ${messages[key].message}`);
+            //console.log(`${messages[key].user}: ${messages[key].message}`);
             messageArray.push(`${messages[key].user}: ${messages[key].message}`);
         }
         for (let i = 5; i >= 0; i--) {
 			if (messageArray[i] = undefined ){
 				console.log(messageArray[i]);
 			} else {
-				
-			
             let textContainer = document.createElement("li");
             textContainer.innerHTML = messageArray[i];
             chatWindow.appendChild(textContainer);
@@ -48,6 +46,6 @@ sendChatInput.addEventListener("click", function (vent) {
 firebase.database().ref('messages/').on('value', function (snapshot) {
     let data = snapshot.val();
     let key = snapshot.key;
-    console.log(data);
+    //console.log(data);
     displayMessage(data);
 });
