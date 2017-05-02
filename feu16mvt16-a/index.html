@@ -3,50 +3,34 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css" type="text/css">
-	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<title>Chat</title>
+	<link rel="stylesheet" href="style.css"> </head>
+
+<body>
+	<container>
+		<h1>ChatFeu16</h1>
+		<div>
+			<input type="text" placeholder="Your name" id="userName">
+			<button id="loginButton">Login</button> <span id="messageToUser"></span> </div>
+		<div>
+			<ul id="chatWindow"> </ul>
+			<input id="chatInput" type="text" placeholder="Input text">
+			<button id="sendChatInput">Send</button>
+		</div>
+	</container>
+	<script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 	<script>
 		// Initialize Firebase
 		var config = {
-			apiKey: "AIzaSyBNlNjo-j1rjCh-ovdMee8e0BhSHhFjVXA"
-			, authDomain: "feu16mvt16.firebaseapp.com"
-			, databaseURL: "https://feu16mvt16.firebaseio.com"
-			, projectId: "feu16mvt16"
-			, storageBucket: "feu16mvt16.appspot.com"
-			, messagingSenderId: "619640994653"
+			apiKey: "AIzaSyAO6-xKx3Qk18DZIv4bzrGEH2_3VizaRv0"
+			, authDomain: "chatfeu16.firebaseapp.com"
+			, databaseURL: "https://chatfeu16.firebaseio.com"
+			, storageBucket: "chatfeu16.appspot.com"
+			, messagingSenderId: "456632987526"
 		};
 		firebase.initializeApp(config);
 	</script>
-	
-</head>
-
-<body>
-
- 
-	<h1>feu16mvt16</h1>
-	<p>
-		Add comment
-		<input id="inputComment" type="text" placeholder="Comment"/>
-		<input id="inputRating" type="number" placeholder="Rating"/> 
-		<button id="addButton">Add a comment</button>
-	</p>
-	
-	<p>
-		Sortera efter: 
-		<button id="btnSortNamn">Djurnamn</button>
-		<button id="btnSortFamilj">Familj</button>
-		<button id="btnSortAntal">Antal</button>
-		<button id="btnSortFärg">Färg</button>
-	</p>
-	
-	<p>
-		Antal resultat: <input id="inputAntalResultat" placeholder="500"/>
-	</p>
-	
-	<table id="tableComments"></table>
-	
-	  </body>
-<script src="script.js" type="text/javascript"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
 
 </html>
