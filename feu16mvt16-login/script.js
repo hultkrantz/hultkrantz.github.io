@@ -116,3 +116,8 @@ googleLogin.addEventListener("click", function () {
 	loginButton.style.display = "none";
 	logoutButton.style.display = "inline";
 });
+//facebookStatus
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+	console.log(response)
+});
