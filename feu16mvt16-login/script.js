@@ -8,7 +8,7 @@ let imageHolder = document.getElementById("imageHolder")
 	, imageMessage = document.getElementById("imageMessage")
 	, user, userProfileUrl, profileImage;
 //////Login
-let loginFunction = function () {
+let facebookLoginFunction = function () {
 	let provider = new firebase.auth.GithubAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		user = result.user;
@@ -81,7 +81,7 @@ let displayProfileImage = function () {
 	imageHolder.appendChild(profileImage);
 };
 loginButton.addEventListener("click", function () {
-	loginFunction();
+	facebookLoginFunction();
 	console.log("loginButton pressed");
 	loginButton.style.display = "none";
 	googleLogin.style.display = "none";
