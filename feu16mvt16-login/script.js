@@ -1,7 +1,7 @@
 ////////Declaration////////
 let imageHolder = document.getElementById("imageHolder")
 	, nameHolder = document.getElementById("nameHolder")
-	, loginButton = document.getElementById("loginButton")
+	, facebookLogin = document.getElementById("facebookLogin")
 	, googleLogin = document.getElementById("googleLogin")
 	, logoutButton = document.getElementById("logoutButton")
 	, secretButton = document.getElementById("secretButton")
@@ -80,10 +80,10 @@ let displayProfileImage = function () {
 	profileImage.style.maxWidth = "100%";
 	imageHolder.appendChild(profileImage);
 };
-loginButton.addEventListener("click", function () {
+facebookLogin.addEventListener("click", function () {
 	facebookLoginFunction();
-	console.log("loginButton pressed");
-	loginButton.style.display = "none";
+	console.log("facebookLogin pressed");
+	facebookLogin.style.display = "none";
 	googleLogin.style.display = "none";
 	logoutButton.style.display = "inline";
 });
@@ -91,7 +91,7 @@ logoutButton.addEventListener("click", function () {
 	logoutFuntion();
 	console.log("logoutButton pressed");
 	nameHolder.innerHTML = "Another time then";
-	loginButton.style.display = "inline";
+	facebookLogin.style.display = "inline";
 	googleLogin.style.display = "inline";
 	logoutButton.style.display = "none";
 	profileImage.src = "";
@@ -105,6 +105,6 @@ googleLogin.addEventListener("click", function () {
 	googleFunction();
 	console.log("googleLogin pressed");
 	googleLogin.style.display = "none";
-	loginButton.style.display = "none";
+	facebookLogin.style.display = "none";
 	logoutButton.style.display = "inline";
 });
