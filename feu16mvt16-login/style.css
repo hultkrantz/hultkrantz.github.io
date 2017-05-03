@@ -27,7 +27,7 @@ button {
 }
 
 #imageHolder {
-    background-image: url(aaa.jpg);
+	background-color: cadetblue;
     margin: 10vh;
     margin-bottom: 0;
     height: 400px;
