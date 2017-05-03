@@ -22,18 +22,10 @@ let loginFunction = function () {
 		else {
 			nameHolder.innerHTML = "Loggedin with Github. " + user.email + "!";
 		}
-			/////////Secret User
-	let secretFunction = function () {
-		if (user.email === "carl.hultkrantz@gmail.com") {
-			secretButton.style.display = "inline";
-			console.log("You are worthy")
-		} else {
-			console.log("You are not worthy")
-		}
 	};
 				userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
-		secretFunction();
+
 	});
 
 };
