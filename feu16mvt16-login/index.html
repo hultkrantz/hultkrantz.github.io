@@ -2,59 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>feu16mvt16login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+	<meta charset="UTF-8">
+	<title>feu16mvt16login</title>
+	<link rel="stylesheet" href="style.css"> </head>
 
 <body>
-    <div id="divContaienr">
-        
-        <div id="imageHolder">
-            <p id="imageMessage">No picture</p>
-        </div>
-        <p id="nameHolder">Please login with Facebook or Google</p>
-        <button id="loginButton">Facebook</button>
-        <button id="googleLogin">Google</button>
-        <button id="logoutButton">Logout</button>
-        <button id="secretButton">Secret</button>
-    </div>
-<!--Firebase-->
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBNlNjo-j1rjCh-ovdMee8e0BhSHhFjVXA",
-    authDomain: "feu16mvt16.firebaseapp.com",
-    databaseURL: "https://feu16mvt16.firebaseio.com",
-    projectId: "feu16mvt16",
-    storageBucket: "feu16mvt16.appspot.com",
-    messagingSenderId: "619640994653"
-  };
-  firebase.initializeApp(config);
-</script>
-<!--Facebook-->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '287021348410161',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();   
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<!--Facebook-->
+	<div id="divContaienr">
+		<div id="imageHolder">
+			<p id="imageMessage">No picture</p>
+		</div>
+		<p id="nameHolder">Please login with Facebook or Google</p>
+		<button class="loginBtn loginBtn--facebook" id="loginButton"> Login with Facebook </button>
+		<button class="loginBtn loginBtn--google" id="googleLogin"> Login with Google </button>
+		<button id="logoutButton">Logout</button>
+		<button id="secretButton">Secret</button>
+	</div>
+	<!--Firebase-->
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBNlNjo-j1rjCh-ovdMee8e0BhSHhFjVXA"
+			, authDomain: "feu16mvt16.firebaseapp.com"
+			, databaseURL: "https://feu16mvt16.firebaseio.com"
+			, projectId: "feu16mvt16"
+			, storageBucket: "feu16mvt16.appspot.com"
+			, messagingSenderId: "619640994653"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<!--Facebook-->
+	<script>
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: '287021348410161'
+				, cookie: true
+				, xfbml: true
+				, version: 'v2.8'
+			});
+			FB.AppEvents.logPageView();
+		};
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<!--Facebook-->
 	<script type="text/javascript" src="script.js"></script>
-     </body>
+</body>
 
 </html>
