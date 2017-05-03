@@ -11,30 +11,23 @@ let imageHolder = document.getElementById("imageHolder")
 let facebookLoginFunction = function () {
 	let provider = new firebase.auth.GithubAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
-		user = result.user;
-
-		if (user.displayName !== null) {
-			nameHolder.innerHTML = "Loggedin with Github. " + user.displayName + "!";
-		}
-		else if (firebase.auth().currentUser.providerData[0].displayName) {
-			nameHolder.innerHTML = "Loggedin with Github. " + firebase.auth().currentUser.providerData[0].displayName + "!";
-		}
-		else {
-			nameHolder.innerHTML = "Loggedin with Github. " + user.email + "!";
-		}
-	};
-				userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
-		displayProfileImage();
-
+			user = result.user;
+			if (user.displayName !== null) {
+				nameHolder.innerHTML = "Loggedin with Github. " + user.displayName + "!";
+			}
+			else if (firebase.auth().currentUser.providerData[0].displayName) {
+				nameHolder.innerHTML = "Loggedin with Github. " + firebase.auth().currentUser.providerData[0].displayName + "!";
+			}
+			else {
+				nameHolder.innerHTML = "Loggedin with Github. " + user.email + "!";
+			}
+		}; userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL; displayProfileImage();
 	});
-
-};
 ////////Google
-let googleFunction = function() {
+let googleFunction = function () {
 	let googleProvider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(googleProvider).then(function (result) {
 		user = result.user;
-
 		if (user.displayName !== null) {
 			nameHolder.innerHTML = "Loggedin with Google. " + user.displayName + "!";
 		}
@@ -44,23 +37,22 @@ let googleFunction = function() {
 		else {
 			nameHolder.innerHTML = "Loggedin with Google. " + user.email + "!";
 		}
-			/////////Secret User
-	let secretFunction = function () {
-		if (user.email === "carl.hultkrantz@gmail.com" || "feldtsen@gmail.com") {
-			secretButton.style.display = "inline";
-			console.log("You are worthy")
-		} else {
-			console.log("You are not worthy")
-		}
-	};
-				userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
+		/////////Secret User
+		let secretFunction = function () {
+			if (user.email === "carl.hultkrantz@gmail.com" || "feldtsen@gmail.com") {
+				secretButton.style.display = "inline";
+				console.log("You are worthy")
+			}
+			else {
+				console.log("You are not worthy")
+			}
+		};
+		userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
 		secretFunction();
 		console.log(user.photoURL)
 	});
-
 };
-
 /////////Logout
 let logoutFuntion = function () {
 	firebase.auth().signOut().then(function (result) {
@@ -100,7 +92,6 @@ logoutButton.addEventListener("click", function () {
 secretButton.addEventListener("click", function () {
 	alert("The cake is a lie");
 });
-
 googleLogin.addEventListener("click", function () {
 	googleFunction();
 	console.log("googleLogin pressed");
