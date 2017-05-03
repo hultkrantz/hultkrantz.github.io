@@ -4,12 +4,29 @@ let imageHolder = document.getElementById("imageHolder")
 	, loginButton = document.getElementById("loginButton")
 	, googleLogin = document.getElementById("googleLogin")
 	, logoutButton = document.getElementById("logoutButton")
-	, secretButton = document.getElementById("secretButton")
 	, imageMessage = document.getElementById("imageMessage")
 	, user, userProfileUrl, profileImage;
 //////Login
 let loginFunction = function () {
-	let provider = new firebase.auth.GithubAuthProvider();
+	/*
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+*/
+	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		user = result.user;
 
@@ -22,18 +39,9 @@ let loginFunction = function () {
 		else {
 			nameHolder.innerHTML = "Loggedin with Github. " + user.email + "!";
 		}
-			/////////Secret User
-	let secretFunction = function () {
-		if (user.email === "carl.hultkrantz@gmail.com") {
-			secretButton.style.display = "inline";
-			console.log("You are worthy")
-		} else {
-			console.log("You are not worthy")
-		}
-	};
+
 				userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
-		secretFunction();
 	});
 
 };
@@ -52,18 +60,9 @@ let googleFunction = function() {
 		else {
 			nameHolder.innerHTML = "Loggedin with Google. " + user.email + "!";
 		}
-			/////////Secret User
-	let secretFunction = function () {
-		if (user.email === "carl.hultkrantz@gmail.com" || "feldtsen@gmail.com") {
-			secretButton.style.display = "inline";
-			console.log("You are worthy")
-		} else {
-			console.log("You are not worthy")
-		}
-	};
 				userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
-		secretFunction();
+
 		console.log(user.photoURL)
 	});
 
@@ -103,11 +102,8 @@ logoutButton.addEventListener("click", function () {
 	googleLogin.style.display = "inline";
 	logoutButton.style.display = "none";
 	profileImage.src = "";
-	secretButton.style.display = "none";
 });
-secretButton.addEventListener("click", function () {
-	alert("The cake is a lie");
-});
+
 
 googleLogin.addEventListener("click", function () {
 	googleFunction();
