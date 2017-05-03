@@ -2,21 +2,22 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Chat</title>
-	<link rel="stylesheet" href="style.css"> </head>
+    <meta charset="UTF-8">
+    <title>LoginFeu16</title>
+</head>
 
 <body>
-	<container>
-		<h1>feu16mvt16</h1>
-		<div>
-			<p>Ge ditt betyg på den här badplatsen!</p>
-			<div class="rating"> <span id="starOne">☆</span><span id="starTwo">☆</span><span is="starThree">☆</span><span id="starFour">☆</span><span id="starFive">☆</span> </div>
-			<input id="chatInput" type="text" placeholder="Skrvi vad du tycker">
-			<button id="sendChatInput">Skicka!</button>
-			<ul id="chatWindow"> </ul>
-		</div>
-	</container>
+    <div id="divContaienr">
+        
+        <div id="imageHolder">
+            <p id="imageMessage">Welcome to LogginFeu16 </p>
+        </div>
+        <p id="nameHolder">Please login with Github or Google</p>
+        <button id="loginButton">Github</button>
+        <button id="googleLogin">Google</button>
+        <button id="logoutButton">Logout</button>
+        <button id="secretButton">Secret</button>
+    </div>
 	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 	<script>
 		// Initialize Firebase
@@ -31,6 +32,6 @@
 		firebase.initializeApp(config);
 	</script>
 	<script type="text/javascript" src="script.js"></script>
-</body>
+    <link rel="stylesheet" href="style.css"> </body>
 
 </html>
