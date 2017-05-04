@@ -6,7 +6,7 @@ class App extends React.Component {
         this.state = {
             user: '',
             userProfileUrl:'', 
-            profileImage:'';
+            profileImage:''
         };
         //bind us together forever and ever
         this.loginFunction = this.loginFunction.bind(this);
