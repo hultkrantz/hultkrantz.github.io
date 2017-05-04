@@ -14,7 +14,7 @@ class App extends React.Component {
     }
 loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
-	firebase.auth().signInWithPopup(provider).then(function (result).bind(this) {
+	firebase.auth().signInWithPopup(provider).then(function (result) {
         console.log(result.user.displayName)
 		 this.setState({
             user: result.user.displayName
