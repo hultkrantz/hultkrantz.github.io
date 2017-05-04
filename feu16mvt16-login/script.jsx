@@ -18,7 +18,7 @@ loginFunction() {
         console.log(result.user.displayName)
 		 this.setState({
             user: result.user.displayName
-        }) //info
+        }).bind(this) //info
 		console.log(this.user)
 		if (user.displayName !== null) {
 			nameHolder.innerHTML = "Loggedin with Facebook. " + this.user.displayName + "!";
