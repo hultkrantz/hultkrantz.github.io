@@ -8,7 +8,7 @@ class App extends React.Component {
         //bind us together forever and ever
         this.loginFunction = this.loginFunction.bind(this);
         this.googleFunction = this.googleFunction.bind(this);
-        this.logoutFuntion = this.logoutFuntion.bind(this);
+        this.logoutFunction = this.logoutFunction.bind(this);
         this.displayProfileImage = this.displayProfileImage.bind(this);
     }
 
@@ -28,6 +28,7 @@ loginFunction() {
 		}
 		userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
+        console.log(user.photoURL)
 	}).catch();
 };
 
@@ -50,7 +51,7 @@ googleFunction() {
 	});
 };
 
-logoutFuntion() {
+logoutFunction() {
 	firebase.auth().signOut().then(function (result) {
 		console.log("You are no more my friend");
 	}).catch(function (error) {
@@ -77,7 +78,7 @@ render() {
 		<p id="nameHolder">Please login with Facebook or Google</p>
 		<button className="loginBtn loginBtn--facebook" id="loginButton" onClick={this.loginFunction} > Login with Facebook </button>
 		<button className="loginBtn loginBtn--google" id="googleLogin" onClick={this.googleFunction}> Login with Google </button>
-		<button id="logoutButton">Logout</button>
+		<button id="logoutButton" onClick={this.logoutFunction}>Logout</button>
     </div>
         )
     }
