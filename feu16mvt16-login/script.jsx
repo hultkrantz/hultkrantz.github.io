@@ -1,5 +1,3 @@
-
-
 class App extends React.Component {
     constructor(props){
         super(props)
@@ -14,14 +12,13 @@ class App extends React.Component {
         this.logoutFunction = this.logoutFunction.bind(this);
         this.displayProfileImage = this.displayProfileImage.bind(this);*/
     }
-
 loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		this.user = result.user; //info
 		console.log(this.user)
 		if (user.displayName !== null) {
-			nameHolder.innerHTML = "Loggedin with Facebook. " + user.displayName + "!";
+			nameHolder.innerHTML = "Loggedin with Facebook. " + this.user.displayName + "!";
 		}
 		else if (firebase.auth().currentUser.providerData[0].displayName) {
 			nameHolder.innerHTML = "Loggedin with Facebook. " + firebase.auth().currentUser.providerData[0].displayName + "!";
