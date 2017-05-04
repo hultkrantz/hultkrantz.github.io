@@ -1,18 +1,18 @@
-////////Declaration////////
-let imageHolder = document.getElementById("imageHolder")
-	, nameHolder = document.getElementById("nameHolder")
-	, loginButton = document.getElementById("loginButton")
-	, googleLogin = document.getElementById("googleLogin")
-	, logoutButton = document.getElementById("logoutButton")
-	, imageMessage = document.getElementById("imageMessage")
-	, user, userProfileUrl, profileImage;
 
 
+class App extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+        };
+        //bind us together forever and ever
+        this.loginFunction = this.loginFunction.bind(this);
+        this.googleFunction = this.googleFunction.bind(this);
+        this.logoutFuntion = this.logoutFuntion.bind(this);
+        this.displayProfileImage = this.displayProfileImage.bind(this);
+    }
 
-
-
-//////Login
-let loginFunction = function () {
+loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		user = result.user; //info
@@ -30,8 +30,8 @@ let loginFunction = function () {
 		displayProfileImage();
 	}).catch();
 };
-////////Google
-let googleFunction = function () {
+
+googleFunction() {
 	let googleProvider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(googleProvider).then(function (result) {
 		user = result.user;
@@ -49,8 +49,8 @@ let googleFunction = function () {
 		console.log(user.photoURL)
 	});
 };
-/////////Logout
-let logoutFuntion = function () {
+
+logoutFuntion() {
 	firebase.auth().signOut().then(function (result) {
 		console.log("You are no more my friend");
 	}).catch(function (error) {
@@ -59,8 +59,8 @@ let logoutFuntion = function () {
 		nameHolder.innerHTML = "Somting went wrong";
 	});
 };
-///////Functions//////
-let displayProfileImage = function () {
+
+displayProfileImage() {
 	imageHolder.innerHTML = "";
 	profileImage = document.createElement("img");
 	profileImage.src = userProfileUrl;
@@ -68,32 +68,23 @@ let displayProfileImage = function () {
 	profileImage.style.maxWidth = "100%";
 	imageHolder.appendChild(profileImage);
 };
-loginButton.addEventListener("click", function () {
-	loginFunction();
-	console.log("loginButton pressed");
-	loginButton.style.display = "none";
-	googleLogin.style.display = "none";
-	logoutButton.style.display = "inline";
-});
-logoutButton.addEventListener("click", function () {
-	logoutFuntion();
-	console.log("logoutButton pressed");
-	nameHolder.innerHTML = "Another time then";
-	loginButton.style.display = "inline";
-	googleLogin.style.display = "inline";
-	logoutButton.style.display = "none";
-	profileImage.src = "";
-});
-googleLogin.addEventListener("click", function () {
-	googleFunction();
-	console.log("googleLogin pressed");
-	googleLogin.style.display = "none";
-	loginButton.style.display = "none";
-	logoutButton.style.display = "inline";
-});
+render() {
+    return (
+    <div id="divContaienr">
+		<div id="imageHolder">
+		<p id="imageMessage">No picture</p>
+		</div>
+		<p id="nameHolder">Please login with Facebook or Google</p>
+		<button className="loginBtn loginBtn--facebook" id="loginButton" onClick={this.loginFunction} > Login with Facebook </button>
+		<button className="loginBtn loginBtn--google" id="googleLogin" onClick={this.googleFunction}> Login with Google </button>
+		<button id="logoutButton">Logout</button>
+    </div>
+        )
+    }
+}
 
 
 ReactDOM.render(
-	<p>React fungerar<p/>,
-	document.getElementById('divContainer')
-);
+        <App/>,
+        document.getElementById('loginRoot')
+      );
