@@ -2,7 +2,7 @@ class App extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            user:{},
+            user:'',
             userProfileUrl:'', 
             profileImage:''
         };
@@ -16,7 +16,7 @@ loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		this.setState({
-            user:result.user
+            user: 2
         }) //info
 		console.log(this.user)
 		if (user.displayName !== null) {
@@ -36,6 +36,7 @@ loginFunction() {
 /*
 
 googleFunction() {
+result.user
 	let googleProvider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(googleProvider).then(function (result) {
 		user = result.user;
@@ -79,7 +80,7 @@ render() {
 		<div id="imageHolder">
 		<p id="imageMessage">No picture</p>
 		</div>
-		<p id="nameHolder">Please login with Facebook or Google</p>
+		<p id="nameHolder">Please login with Facebook aaor Google</p>
 		<button className="loginBtn loginBtn--facebook" id="loginButton" onClick={this.loginFunction} > Login with Facebook </button>
 		<button className="loginBtn loginBtn--google" id="googleLogin" onClick={this.googleFunction}> Login with Google </button>
 		<button id="logoutButton" onClick={this.logoutFunction}>Logout</button>
