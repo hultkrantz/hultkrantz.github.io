@@ -2,7 +2,7 @@ class App extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            user: '',
+            usera: '',
             userProfileUrl:'', 
             profileImage:''
         };
@@ -16,8 +16,8 @@ loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		this.setState({
-            user:result.user
-        }).bind(this); //info
+            usera:result.user
+        }) //info
 		console.log(this.user)
 		if (user.displayName !== null) {
 			nameHolder.innerHTML = "Loggedin with Facebook. " + this.user.displayName + "!";
