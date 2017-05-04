@@ -10,16 +10,16 @@ class App extends React.Component {
         };
         //bind us together forever and ever
         this.loginFunction = this.loginFunction.bind(this);
-        this.googleFunction = this.googleFunction.bind(this);
+        /*this.googleFunction = this.googleFunction.bind(this);
         this.logoutFunction = this.logoutFunction.bind(this);
-        this.displayProfileImage = this.displayProfileImage.bind(this);
+        this.displayProfileImage = this.displayProfileImage.bind(this);*/
     }
 
 loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
-		user = result.user; //info
-		console.log(user)
+		this.user = result.user; //info
+		console.log(this.user)
 		if (user.displayName !== null) {
 			nameHolder.innerHTML = "Loggedin with Facebook. " + user.displayName + "!";
 		}
@@ -34,7 +34,7 @@ loginFunction() {
         console.log(user.photoURL)
 	}).catch();
 };
-
+/*
 googleFunction() {
 	let googleProvider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(googleProvider).then(function (result) {
@@ -72,6 +72,7 @@ displayProfileImage() {
 	profileImage.style.maxWidth = "100%";
 	imageHolder.appendChild(profileImage);
 };
+*/
 render() {
     return (
     <div id="divContaienr">
