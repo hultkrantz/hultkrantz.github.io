@@ -16,7 +16,7 @@ loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
         console.log(result.user.displayName)
-        console.log(this.user)
+        console.log(this.props.user)
 		 this.setState({
             user: result.user.displayName
         }).bind(this) //info
