@@ -2,7 +2,7 @@ class App extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            user:'',
+            user:'dsa',
             userProfileUrl:'', 
             profileImage:''
         };
@@ -16,6 +16,7 @@ loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
         console.log(result.user.displayName)
+        console.log(this.user)
 		 this.setState({
             user: result.user.displayName
         }).bind(this) //info
