@@ -2,7 +2,7 @@ class App extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            user: {},
+            user: '',
             userProfileUrl:'', 
             profileImage:''
         };
@@ -15,7 +15,7 @@ class App extends React.Component {
 loginFunction() {
 	let provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider).then(function (result) {
-		this.user = result.user; //info
+		this.setState({user = result.user}) //info
 		console.log(this.user)
 		if (user.displayName !== null) {
 			nameHolder.innerHTML = "Loggedin with Facebook. " + this.user.displayName + "!";
@@ -76,7 +76,7 @@ render() {
 		<div id="imageHolder">
 		<p id="imageMessage">No picture</p>
 		</div>
-		<p id="nameHolder">Please login with Fajbook or Google</p>
+		<p id="nameHolder">Please login with Fajsebook or Google</p>
 		<button className="loginBtn loginBtn--facebook" id="loginButton" onClick={this.loginFunction} > Login with Facebook </button>
 		<button className="loginBtn loginBtn--google" id="googleLogin" onClick={this.googleFunction}> Login with Google </button>
 		<button id="logoutButton" onClick={this.logoutFunction}>Logout</button>
