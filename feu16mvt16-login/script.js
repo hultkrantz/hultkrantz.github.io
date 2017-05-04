@@ -46,7 +46,6 @@ let googleFunction = function () {
 		}
 		userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
 		displayProfileImage();
-		console.log(user.photoURL)
 	});
 };
 /////////Logout

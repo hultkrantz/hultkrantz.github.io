@@ -4,6 +4,9 @@ class App extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+            user: '',
+            userProfileUrl:'', 
+            profileImage:'';
         };
         //bind us together forever and ever
         this.loginFunction = this.loginFunction.bind(this);
