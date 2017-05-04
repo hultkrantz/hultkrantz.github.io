@@ -76,7 +76,7 @@ render() {
 		<div id="imageHolder">
 		<p id="imageMessage">No picture</p>
 		</div>
-		<p id="nameHolder">Please login with Fajsebook or Google</p>
+		<p id="nameHolder">Please login with Fajssebook or Google</p>
 		<button className="loginBtn loginBtn--facebook" id="loginButton" onClick={this.loginFunction} > Login with Facebook </button>
 		<button className="loginBtn loginBtn--google" id="googleLogin" onClick={this.googleFunction}> Login with Google </button>
 		<button id="logoutButton" onClick={this.logoutFunction}>Logout</button>
