@@ -17,13 +17,13 @@ class App extends React.Component {
 		firebase.auth().signInWithPopup(provider).then(function (result) {
 			let self = this;
 			console.log(result.user.displayName)
-			console.log(this.state.user)
+			console.log(self.state.user)
 			 self.setState({
 				user: result.user.displayName
 			})//info
-			console.log(this.user)
+			console.log(self.user)
 			if (user.displayName !== null) {
-				nameHolder.innerHTML = "Loggedin with Facebook. " + this.user.displayName + "!";
+				nameHolder.innerHTML = "Loggedin with Facebook. " + self.user.displayName + "!";
 			}
 			else if (firebase.auth().currentUser.providerData[0].displayName) {
 				nameHolder.innerHTML = "Loggedin with Facebook. " + firebase.auth().currentUser.providerData[0].displayName + "!";
