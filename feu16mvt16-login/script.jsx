@@ -13,6 +13,7 @@ class App extends React.Component {
         this.displayProfileImage = this.displayProfileImage.bind(this);*/
     }
 	loginFunction() {
+		console.log('this:',this)
 		let provider = new firebase.auth.FacebookAuthProvider();
 		firebase.auth().signInWithPopup(provider).then(function (result) {
 			console.log(result.user.displayName)
