@@ -19,7 +19,7 @@ class App extends React.Component {
 		firebase.auth().signInWithPopup(provider).then(function (result) {
 			console.log(result.user.displayName)
 			console.log(self.state.user)
-			 this.setState({
+			 self.setState({
 				user: result.user.displayName
 			})//info
 			if (result.user.displayName !== null) {
