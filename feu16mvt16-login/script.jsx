@@ -12,29 +12,29 @@ class App extends React.Component {
         this.logoutFunction = this.logoutFunction.bind(this);
         this.displayProfileImage = this.displayProfileImage.bind(this);*/
     }
-loginFunction() {
-	let provider = new firebase.auth.FacebookAuthProvider();
-	firebase.auth().signInWithPopup(provider).then(function (result) {
-        console.log(result.user.displayName)
-        console.log(this.user)
-		 this.setState({
-            user: result.user.displayName
-        }).bind(this) //info
-		console.log(this.user)
-		if (user.displayName !== null) {
-			nameHolder.innerHTML = "Loggedin with Facebook. " + this.user.displayName + "!";
-		}
-		else if (firebase.auth().currentUser.providerData[0].displayName) {
-			nameHolder.innerHTML = "Loggedin with Facebook. " + firebase.auth().currentUser.providerData[0].displayName + "!";
-		}
-		else {
-			nameHolder.innerHTML = "Loggedin with Facebook. " + user.email + "!";
-		}
-		userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
-		displayProfileImage();
-        console.log(user.photoURL)
-	}).catch();
-};
+	loginFunction() {
+		let provider = new firebase.auth.FacebookAuthProvider();
+		firebase.auth().signInWithPopup(provider).then(function (result) {
+			console.log(result.user.displayName)
+			console.log(this.state.user)
+			 this.setState({
+				user: result.user.displayName
+			})//info
+			console.log(this.user)
+			if (user.displayName !== null) {
+				nameHolder.innerHTML = "Loggedin with Facebook. " + this.user.displayName + "!";
+			}
+			else if (firebase.auth().currentUser.providerData[0].displayName) {
+				nameHolder.innerHTML = "Loggedin with Facebook. " + firebase.auth().currentUser.providerData[0].displayName + "!";
+			}
+			else {
+				nameHolder.innerHTML = "Loggedin with Facebook. " + user.email + "!";
+			}
+			userProfileUrl = firebase.auth().currentUser.providerData[0].photoURL;
+			displayProfileImage();
+			console.log(user.photoURL)
+		}).catch();
+	};
 /*
 
 googleFunction() {
