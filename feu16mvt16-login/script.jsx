@@ -20,7 +20,8 @@ class App extends React.Component {
 			console.log(result.user.displayName)
 			console.log(self.state.user)
 			 self.setState({
-				user: result.user
+				user: result.user;
+				console.log('User: ', user)
 			})//info
 			if (result.user.displayName !== null) {
 				nameHolder.innerHTML = "Loggedin with Facebook. " + self.user.displayName + "!";
