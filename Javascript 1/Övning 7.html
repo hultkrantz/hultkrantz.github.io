@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Övning7 v2</title>
+    <style>
+        
+        body {
+             margin:10px;
+        }
+        
+            .container {
+            display: flex;
+            flex-flow: row;
+            text-align: center;
+            font-family:monospace;
+            font-size: 2em;
+            
+        }
+        
+        .container > .nav {
+            flex-grow: 3;
+            order:1;
+            background-color: orange;
+            height: 75px;
+        }
+        .container > .content {
+            flex-grow: 6;
+            order:2;
+            background-color: hotpink;
+             height: 75px;
+        }
+        .container > .aside {
+            flex-grow: 3;
+            order:3;
+            background-color: chartreuse;
+            height: 75px;
+        }
+            @media (min-width:600px) and (max-width:1050px) {
+            .container {
+                flex-flow: column; 
+                background-color: aqua;
+                
+                }
+        }  
+    
+        /*Färger*/
+        
+        .white, .green, .blue, .pink, .yellow {
+            display: none;
+            height: 100px;
+            font-size: 3em;
+            font-family: cursive;
+            text-align: center;
+        }
+        
+        @media (max-width: 600px) {
+            .white {
+                background-color: white;
+                display: block;
+            }
+            
+        }
+        @media (min-width: 601px) and (max-width: 750px) {
+            .green {
+                background-color: lawngreen;
+                display: block;
+            }
+            
+        }
+        @media (min-width: 751px) and (max-width:900px) {
+            .blue {
+                background-color: lightskyblue;
+                display: block;
+            }
+            
+        }
+        @media (min-width:901px) and (max-width: 1050px) {
+            .pink {
+                background-color: hotpink;
+                display: block;
+            }
+            
+        }
+        @media (min-width: 1051px) {
+            .yellow {
+                background-color: yellow;
+                display: block;
+            }
+            
+        }
+        
+        
+        
+    </style>
+    
+</head>
+<body>
+   
+    
+    <div class="container">
+        <div class="nav">1</div>
+        <div class="content">2</div>
+        <div class="aside">3</div>  
+    </div>
+    
+    <div class="colors">
+        <div class="white"> Vit </div>
+        <div class="green">Grön</div>
+        <div class="blue">Blå</div>
+        <div class="pink">Rosa</div>
+        <div class="yellow">Gul</div>
+        
+    </div>
+    
+   
+    
+</body>
+</html>

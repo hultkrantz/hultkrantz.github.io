@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oseriöst</title>
+    <style>
+    
+        nav {
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: aquamarine;
+        }
+        
+        a {
+            text-decoration: none    
+        }
+    
+        li {
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: deepskyblue;
+            font-family: cursive;
+            font-size: 22px;
+        }
+        
+        h3 {
+            display: inline-block;
+            border: 5px solid grey;
+            background-color: dimgrey;
+            border-radius: 3px;
+            left: 
+        }
+        
+        .betala {
+            display: inline-block;
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid blue;
+            border-radius: 15px 40px;
+            background-color: darkorange;
+        }
+        
+        button {
+            position: relative;
+            left:50px
+            
+        }
+        
+    </style>
+</head>
+<body>
+   
+   <nav>
+        <ul>
+            <li><a href="http://www.feber.se/">Feber.se</a></li>
+            <li><a href="http://www.tjock.se/">Tjock.se</a></li>
+            <li><a href="http://www.gp.se/">Göteborgsposten</a></li> 
+             
+        </ul>
+   </nav>
+   
+       <h3>Lite skum webbsida för betalning.</h3>
+       <p>Använd på egen risk*</p>
+    <div class="betala">
+       <textarea row="8" cols="37" placeholder="Skriv din beställning"></textarea>
+       
+        <br>
+        <br>
+
+        <label for="username"><strong>Skriv in ditt namn:</strong></label>
+        <input type="text" name="name" id="username" value="" placeholder="Ditt namn"/>
+
+        <br>
+        <br>
+
+        <datalist id="minlista">
+            <option>Handelsbanken</option>
+            <option>Swedbank</option>
+            <option>Nordea</option>
+            <option>Annan lokal bank</option>
+
+        </datalist>
+        <label for="minlista"><strong>Vilken bank använder du?</strong></label>
+        <input type="text" list="minlista"/>
+        <br>
+        <br>
+        <lable for="kortnummer"><strong>Kortnummer:</strong></lable>
+        <input type="text" name="kort" id="kortnummer" value="" placeholder="Kortnummer"/>
+        <br>
+        <br>
+
+        <label for="bankkod"><strong>Pinkod till bankkort:</strong></label>
+        <input type="text" name="kod" id="bankkod" value="" placeholder="Pinkod"/>
+
+        <br>
+        <br>
+        <input type="checkbox" name="vanlig" value="">
+        <lable for="vanlig" >Godkänn skumma vilkor</lable>
+        <br>
+        <br>
+        <button type="button">Genomför skum betalning</button>
+    </div>
+
+   
+   
+   <!--Lägg till ett formulär på webbsidan. Tänk dig att det är en del av en webbshop och man fyller i betalningsinformation. Du ska använda formulärelementen input, label, select, textarea och button. Använd CSS för att styla formuläret. Använd minst ett av varje sorts input-element vi har gått igenom.-->
+   
+    
+</body>
+</html>
