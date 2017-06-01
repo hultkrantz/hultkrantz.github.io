@@ -2,25 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../App';
 import TheButton from '../button.js';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 
 // Check button render
-it('Does it render?', () => {
+it('Does it Render?', () => {
 	const div = document.createElement('div');
 	ReactDOM.render(<TheButton />, div);
 });
 // Check button shallow render
 test('The shallow render', () => {
 	shallow(<TheButton/>);
+			});
 //Button has className
-test ('button has class buttonClass', () => {
-	const wrapper = shallow(<TheButton/>)
+test ('Button has class buttonClass', () => {
+	const wrapper = mount(<App/>)
 	expect(wrapper.find('button').hasClass('buttonClass')).toBe(true);
 })
 // Check if state clears
-test('clear state from contamination', () => {
-		const wrapper = shallow(<App/>);
+test('Clear state from contamination', () => {
+		const wrapper = mount(<App/>);
 		console.log(wrapper.state)
 		wrapper.find('button').simulate('click', {
 			target: {
@@ -31,5 +32,5 @@ test('clear state from contamination', () => {
 		let actual = wrapper.state('inputEmail');
 		expect(actual).toBe('');
 	})
-});	
+
 	

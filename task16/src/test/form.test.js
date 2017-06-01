@@ -16,7 +16,7 @@ test('The shallow render', () => {
 });
 
 // Check state name change
-test('user change name in state.', () => {
+test('user change Name in state.', () => {
 	const newStateName = 'Carl',
 	event = {target: {
 			value: newStateName,

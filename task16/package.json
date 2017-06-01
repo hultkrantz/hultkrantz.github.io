@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "enzyme": "^2.8.2",
+    "gh-pages": "^1.0.0",
     "react-scripts": "1.0.7",
     "react-test-renderer": "^15.5.4"
   },
@@ -15,7 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
-	"homepage": "http://hultkrantz.github.io/task16"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+	"deploy": "gh-pages -d build"
+
+  },
+  "homepage": "http://hultkrantz.github.io/task16"
 }
