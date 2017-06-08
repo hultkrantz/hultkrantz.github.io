@@ -22,9 +22,10 @@ test ('Button has class buttonClass', () => {
 // Check if state clears
 test('Clear state from contamination', () => {
 		const wrapper = mount(<App/>);
-		console.log(wrapper.state)
-		wrapper.find('button').simulate('click', {
+		console.log(wrapper.state("inputEmail"))
+		wrapper.find('button#deleteButton').simulate('click', {
 			target: {
+				type: 'button',
 				className: 'buttonClass'
 			},
 			type: 'click'
