@@ -1,0 +1,53 @@
+#aboutHeader{
+	height:40vh;
+}
+
+#aa{
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#dropdown{
+	top: 1em;
+	left: 2em;
+}
+
+.backgroundImage{
+	width: 100vw;
+	position: fixed;
+	top: 200;
+	left: ;
+	z-index: -1;
+}
+
+.section-b{
+	opacity: 0.85;
+	margin-bottom: 12rem;
+	margin-top: 8rem;
+}
+
+.section-a{
+	opacity: 1;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-bottom: 20rem;
+	font-size: 1.5em;
+}
+
+#pictureOfMe{
+	height: 450px;
+}
+
+ul{
+	border-radius: 5px;
+	color: #fff;
+	background: #333;
+	margin: 10%;
+	list-style-type: none;
+
+}
+
+hr{
+	border: 0px solid black;
+}
